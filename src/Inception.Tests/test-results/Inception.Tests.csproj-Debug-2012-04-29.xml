@@ -1,0 +1,2128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <UnitTestResult>
+      <TestDate>2012-04-29T18:47:56</TestDate>
+      <Status>Failure</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>0</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+      <Message>Connection refused</Message>
+      <StackTrace>  at Mono.Remoting.Channels.Unix.HostConnectionPool.CreateConnection () [0x0002a] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixConnectionPool.cs:265 
+  at Mono.Remoting.Channels.Unix.HostConnectionPool.GetConnection () [0x000bb] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixConnectionPool.cs:249 
+  at Mono.Remoting.Channels.Unix.UnixConnectionPool.GetConnection (System.String path) [0x00049] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixConnectionPool.cs:104 
+  at Mono.Remoting.Channels.Unix.UnixClientTransportSink.ProcessMessage (IMessage msg, ITransportHeaders requestHeaders, System.IO.Stream requestStream, ITransportHeaders&amp; responseHeaders, System.IO.Stream&amp; responseStream) [0x00025] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixClientTransportSink.cs:171 
+  at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage (IMessage msg) [0x0006c] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/System.Runtime.Remoting/System.Runtime.Remoting.Channels/BinaryClientFormatterSink.cs:157 </StackTrace>
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2012-04-29T20:52:07</TestDate>
+      <Status>Success</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>73</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+  </Results>
+  <Tests>
+    <TestRecord Name="Inception">
+      <Results>
+        <UnitTestResult>
+          <TestDate>2012-04-29T20:52:07</TestDate>
+          <Status>Success</Status>
+          <TotalFailures>0</TotalFailures>
+          <TotalSuccess>73</TotalSuccess>
+          <TotalIgnored>0</TotalIgnored>
+          <Time />
+        </UnitTestResult>
+      </Results>
+      <Tests>
+        <TestRecord Name="Tests">
+          <Results>
+            <UnitTestResult>
+              <TestDate>2012-04-29T20:52:07</TestDate>
+              <Status>Success</Status>
+              <TotalFailures>0</TotalFailures>
+              <TotalSuccess>73</TotalSuccess>
+              <TotalIgnored>0</TotalIgnored>
+              <Time />
+            </UnitTestResult>
+          </Results>
+          <Tests>
+            <TestRecord Name="InversionOfControl">
+              <Results>
+                <UnitTestResult>
+                  <TestDate>2012-04-29T18:47:56</TestDate>
+                  <Status>Success</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>12</TotalSuccess>
+                  <TotalIgnored>0</TotalIgnored>
+                  <Time />
+                </UnitTestResult>
+                <UnitTestResult>
+                  <TestDate>2012-04-29T20:52:07</TestDate>
+                  <Status>Success</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>12</TotalSuccess>
+                  <TotalIgnored>0</TotalIgnored>
+                  <Time />
+                </UnitTestResult>
+              </Results>
+              <Tests>
+                <TestRecord Name="ConfigTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T18:47:56</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>10</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>10</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="CanConstructInstanceWithArray">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.16ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.18ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanGetAllInstancesOfType">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.03ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.03ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanInstantiateObjectWithConstructorArray">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanInstantiateUnregisteredType">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanRegisterAndRetrieveNamedInstance">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="ChildContainerCanResolveParentRegistration">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="GettingSingletonReturnsSameInstance">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="GettingTransientReturnsUniqueInstances">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="RequestingUnnamedInstanceDoesNotReturnNamedInstance">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="Test">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="DynamicDelegateActivatorTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T18:47:56</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>2</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>2</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="CanInstantiateClassWithDefaultConstructor">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanInstantiateNonDefaultConstructor">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+              </Tests>
+            </TestRecord>
+            <TestRecord Name="Proxying">
+              <Results>
+                <UnitTestResult>
+                  <TestDate>2012-04-29T20:52:07</TestDate>
+                  <Status>Success</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>61</TotalSuccess>
+                  <TotalIgnored>0</TotalIgnored>
+                  <Time />
+                </UnitTestResult>
+              </Results>
+              <Tests>
+                <TestRecord Name="ClassProxyMetadataTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T18:47:56</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>7</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>7</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="CorrectBaseTypeIsDetermined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 1.14ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 1.22ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectEventMetadataIsDetermined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectMethodMetadataIsDetermined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectPropertyMetadataIsDetermined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="DefaultConstructorIsDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="OverloadedConstructorIsDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="TwoConstructorsAreDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="ClassWithInterfaceProxyMetadataTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T18:47:56</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>4</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>4</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="CorrectEventsAreDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectInterfacesAreDetermined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectMethodsAreDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectPropertiesAreDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="InterfaceProxyMetadataTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T18:47:56</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>5</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>5</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="CorrectEventsAreDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectInterfacesAreDetermined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectMethodsAreDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CorrectPropertiesAreDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="SingleConstructorIsDefined">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T18:47:56</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="MethodInvocations">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>26</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="ClassProxyOutArgumentTests">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>13</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                        </UnitTestResult>
+                      </Results>
+                      <Tests>
+                        <TestRecord Name="CanInvokeMethodWithBooleanOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>1</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----&gt; System.InvalidProgramException : Invalid IL code in ClassProxyOutArgumentTests.Proxies.&lt;Proxy1122346359&gt;OutParameterTestModel:.ctor (Inception.Proxying.IProxyDispatcher): IL_000d: nop       
+
+</Message>
+                              <StackTrace>  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00131] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:532 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:541 
+  at System.Activator.CreateInstance (System.Type type, BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes) [0x00180] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:299 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args, System.Object[] activationAttributes) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:234 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:229 
+  at Inception.Proxying.ProxyActivator.CreateInstance (System.Type type, Inception.Reflection.ArgumentCollection constructorArguments) [0x0002e] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyActivator.cs:28 
+  at Inception.Proxying.ProxyFactory.CreateProxy[OutParameterTestModel] (System.Action`1 config) [0x00044] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyFactory.cs:71 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CreateProxy () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:28 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CanInvokeMethodWithBooleanOutArg () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:34 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d5] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:226 
+--InvalidProgramException
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0011e] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:526 </StackTrace>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.12ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithByteOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>1</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----&gt; System.InvalidProgramException : Invalid IL code in ClassProxyOutArgumentTests.Proxies.&lt;Proxy1122346359&gt;OutParameterTestModel:.ctor (Inception.Proxying.IProxyDispatcher): IL_000d: nop       
+
+</Message>
+                              <StackTrace>  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00131] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:532 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:541 
+  at System.Activator.CreateInstance (System.Type type, BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes) [0x00180] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:299 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args, System.Object[] activationAttributes) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:234 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:229 
+  at Inception.Proxying.ProxyActivator.CreateInstance (System.Type type, Inception.Reflection.ArgumentCollection constructorArguments) [0x0002e] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyActivator.cs:28 
+  at Inception.Proxying.ProxyFactory.CreateProxy[OutParameterTestModel] (System.Action`1 config) [0x00044] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyFactory.cs:71 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CreateProxy () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:28 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CanInvokeMethodWithByteOutArg () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:46 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d5] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:226 
+--InvalidProgramException
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0011e] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:526 </StackTrace>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithCharOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>1</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----&gt; System.InvalidProgramException : Invalid IL code in ClassProxyOutArgumentTests.Proxies.&lt;Proxy1122346359&gt;OutParameterTestModel:.ctor (Inception.Proxying.IProxyDispatcher): IL_000d: nop       
+
+</Message>
+                              <StackTrace>  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00131] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:532 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:541 
+  at System.Activator.CreateInstance (System.Type type, BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes) [0x00180] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:299 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args, System.Object[] activationAttributes) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:234 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:229 
+  at Inception.Proxying.ProxyActivator.CreateInstance (System.Type type, Inception.Reflection.ArgumentCollection constructorArguments) [0x0002e] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyActivator.cs:28 
+  at Inception.Proxying.ProxyFactory.CreateProxy[OutParameterTestModel] (System.Action`1 config) [0x00044] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyFactory.cs:71 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CreateProxy () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:28 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CanInvokeMethodWithCharOutArg () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:58 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d5] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:226 
+--InvalidProgramException
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0011e] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:526 </StackTrace>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithDecimalOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>1</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----&gt; System.InvalidProgramException : Invalid IL code in ClassProxyOutArgumentTests.Proxies.&lt;Proxy1122346359&gt;OutParameterTestModel:.ctor (Inception.Proxying.IProxyDispatcher): IL_000d: nop       
+
+</Message>
+                              <StackTrace>  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00131] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:532 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:541 
+  at System.Activator.CreateInstance (System.Type type, BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes) [0x00180] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:299 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args, System.Object[] activationAttributes) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:234 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:229 
+  at Inception.Proxying.ProxyActivator.CreateInstance (System.Type type, Inception.Reflection.ArgumentCollection constructorArguments) [0x0002e] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyActivator.cs:28 
+  at Inception.Proxying.ProxyFactory.CreateProxy[OutParameterTestModel] (System.Action`1 config) [0x00044] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyFactory.cs:71 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CreateProxy () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:28 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CanInvokeMethodWithDecimalOutArg () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:166 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d5] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:226 
+--InvalidProgramException
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0011e] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:526 </StackTrace>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithDoubleOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>1</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----&gt; System.InvalidProgramException : Invalid IL code in ClassProxyOutArgumentTests.Proxies.&lt;Proxy1122346359&gt;OutParameterTestModel:.ctor (Inception.Proxying.IProxyDispatcher): IL_000d: nop       
+
+</Message>
+                              <StackTrace>  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00131] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:532 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:541 
+  at System.Activator.CreateInstance (System.Type type, BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes) [0x00180] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:299 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args, System.Object[] activationAttributes) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:234 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:229 
+  at Inception.Proxying.ProxyActivator.CreateInstance (System.Type type, Inception.Reflection.ArgumentCollection constructorArguments) [0x0002e] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyActivator.cs:28 
+  at Inception.Proxying.ProxyFactory.CreateProxy[OutParameterTestModel] (System.Action`1 config) [0x00044] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyFactory.cs:71 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CreateProxy () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:28 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CanInvokeMethodWithDoubleOutArg () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:154 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d5] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:226 
+--InvalidProgramException
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0011e] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:526 </StackTrace>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithInt16OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>1</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----&gt; System.InvalidProgramException : Invalid IL code in ClassProxyOutArgumentTests.Proxies.&lt;Proxy1122346359&gt;OutParameterTestModel:.ctor (Inception.Proxying.IProxyDispatcher): IL_000d: nop       
+
+</Message>
+                              <StackTrace>  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00131] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:532 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:541 
+  at System.Activator.CreateInstance (System.Type type, BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes) [0x00180] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:299 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args, System.Object[] activationAttributes) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:234 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:229 
+  at Inception.Proxying.ProxyActivator.CreateInstance (System.Type type, Inception.Reflection.ArgumentCollection constructorArguments) [0x0002e] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyActivator.cs:28 
+  at Inception.Proxying.ProxyFactory.CreateProxy[OutParameterTestModel] (System.Action`1 config) [0x00044] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyFactory.cs:71 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CreateProxy () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:28 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CanInvokeMethodWithInt16OutArg () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:70 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d5] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:226 
+--InvalidProgramException
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0011e] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:526 </StackTrace>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:50:14</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Connection refused</Message>
+                              <StackTrace>  at Mono.Remoting.Channels.Unix.HostConnectionPool.CreateConnection () [0x0002a] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixConnectionPool.cs:265 
+  at Mono.Remoting.Channels.Unix.HostConnectionPool.GetConnection () [0x000bb] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixConnectionPool.cs:249 
+  at Mono.Remoting.Channels.Unix.UnixConnectionPool.GetConnection (System.String path) [0x00049] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixConnectionPool.cs:104 
+  at Mono.Remoting.Channels.Unix.UnixClientTransportSink.ProcessMessage (IMessage msg, ITransportHeaders requestHeaders, System.IO.Stream requestStream, ITransportHeaders&amp; responseHeaders, System.IO.Stream&amp; responseStream) [0x00025] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixClientTransportSink.cs:171 
+  at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage (IMessage msg) [0x0006c] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/System.Runtime.Remoting/System.Runtime.Remoting.Channels/BinaryClientFormatterSink.cs:157 </StackTrace>
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithInt32OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>1</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>System.Reflection.TargetInvocationException : Exception has been thrown by the target of an invocation.
+  ----&gt; System.InvalidProgramException : Invalid IL code in ClassProxyOutArgumentTests.Proxies.&lt;Proxy1122346359&gt;OutParameterTestModel:.ctor (Inception.Proxying.IProxyDispatcher): IL_000d: nop       
+
+</Message>
+                              <StackTrace>  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00131] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:532 
+  at System.Reflection.MonoCMethod.Invoke (BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:541 
+  at System.Activator.CreateInstance (System.Type type, BindingFlags bindingAttr, System.Reflection.Binder binder, System.Object[] args, System.Globalization.CultureInfo culture, System.Object[] activationAttributes) [0x00180] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:299 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args, System.Object[] activationAttributes) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:234 
+  at System.Activator.CreateInstance (System.Type type, System.Object[] args) [0x00000] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System/Activator.cs:229 
+  at Inception.Proxying.ProxyActivator.CreateInstance (System.Type type, Inception.Reflection.ArgumentCollection constructorArguments) [0x0002e] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyActivator.cs:28 
+  at Inception.Proxying.ProxyFactory.CreateProxy[OutParameterTestModel] (System.Action`1 config) [0x00044] in /Users/Brad/Dev/hg/inception/Inception/Proxying/ProxyFactory.cs:71 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CreateProxy () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:28 
+  at Inception.Tests.Proxying.MethodInvocations.ClassProxyOutArgumentTests.CanInvokeMethodWithInt32OutArg () [0x00000] in /Users/Brad/Dev/hg/inception/Inception.Tests/Proxying/MethodInvocations/ClassProxyOutArgumentTests.cs:82 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d5] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:226 
+--InvalidProgramException
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&amp;)
+  at System.Reflection.MonoCMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0011e] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/corlib/System.Reflection/MonoMethod.cs:526 </StackTrace>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithInt64OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T18:47:56</TestDate>
+                              <Status>Failure</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>0</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Unix transport error.</Message>
+                              <StackTrace>  at Mono.Remoting.Channels.Unix.UnixMessageIO.ReceiveMessageStatus (System.IO.Stream networkStream, System.Byte[] buffer) [0x0000f] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixMessageIO.cs:59 
+  at Mono.Remoting.Channels.Unix.UnixClientTransportSink.ProcessMessage (IMessage msg, ITransportHeaders requestHeaders, System.IO.Stream requestStream, ITransportHeaders&amp; responseHeaders, System.IO.Stream&amp; responseStream) [0x0004f] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/Mono.Posix/Mono.Remoting.Channels.Unix/UnixClientTransportSink.cs:176 
+  at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage (IMessage msg) [0x0006c] in /private/tmp/monobuild/build/BUILD/mono-2.10.8/mcs/class/System.Runtime.Remoting/System.Runtime.Remoting.Channels/BinaryClientFormatterSink.cs:157 </StackTrace>
+                            </UnitTestResult>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithReferenceTypeOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithSingleOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithUInt16OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithUInt32OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithUInt64OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                      </Tests>
+                    </TestRecord>
+                    <TestRecord Name="ClassProxyRefArgumentTests">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>13</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                        </UnitTestResult>
+                      </Results>
+                      <Tests>
+                        <TestRecord Name="CanInvokeMethodWithBooleanOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithByteOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithCharOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithDecimalOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithDoubleOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithInt16OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithInt32OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithInt64OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithReferenceTypeOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithSingleOutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithUInt16OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithUInt32OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                        <TestRecord Name="CanInvokeMethodWithUInt64OutArg">
+                          <Results>
+                            <UnitTestResult>
+                              <TestDate>2012-04-29T20:52:07</TestDate>
+                              <Status>Success</Status>
+                              <TotalFailures>0</TotalFailures>
+                              <TotalSuccess>1</TotalSuccess>
+                              <TotalIgnored>0</TotalIgnored>
+                              <Time />
+                              <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                              <ConsoleOutput />
+                              <ConsoleError />
+                            </UnitTestResult>
+                          </Results>
+                        </TestRecord>
+                      </Tests>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="ProxyBuilderTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>8</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="CanBuildInterfaceProxy">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.03ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanBuildSubClassProxy">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanBuildSubClassProxyWithDuckType">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanBuildSubClassProxyWithInstantiatedMixin">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanBuildSubClassProxyWithTargetedMixin">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanBuildTargetedClassProxy">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanBuildTargetedInterfaceProxy">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.02ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="ProxyGeneratedWithDefaultConstructorOnInterfaceTypes">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="ProxyConstructorSelectorTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>4</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="CanLocateConstructorWithBaseClassArgument">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanLocateConstructorWithExactArgumentTypes">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanLocateConstructorWithImplementedInterfaceArgument">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="CanLocateDefaultConstructor">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="ProxyDefinitionEqualityTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>5</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="DifferingProxyDefinitionsAreNotEqual">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="DifferingProxyDefinitionsWithAdditionalInterfaceAreNotEqual">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="ProxyDefinitionsAreEqual">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="ProxyDefinitionsHaveSameHashCodes">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="ProxyDefinitionsWithAdditionalInterfaceHaveSameHashCode">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+                <TestRecord Name="ProxyTypeCacheTests">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2012-04-29T20:52:07</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>2</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                    </UnitTestResult>
+                  </Results>
+                  <Tests>
+                    <TestRecord Name="IncorrectProxyTypesAreNotReturnedFromCache">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                    <TestRecord Name="ProxyDefinitionsAreCached">
+                      <Results>
+                        <UnitTestResult>
+                          <TestDate>2012-04-29T20:52:07</TestDate>
+                          <Status>Success</Status>
+                          <TotalFailures>0</TotalFailures>
+                          <TotalSuccess>1</TotalSuccess>
+                          <TotalIgnored>0</TotalIgnored>
+                          <Time />
+                          <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                          <ConsoleOutput />
+                          <ConsoleError />
+                        </UnitTestResult>
+                      </Results>
+                    </TestRecord>
+                  </Tests>
+                </TestRecord>
+              </Tests>
+            </TestRecord>
+          </Tests>
+        </TestRecord>
+      </Tests>
+    </TestRecord>
+  </Tests>
+</TestRecord>

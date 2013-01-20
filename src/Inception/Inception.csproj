@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD5E842E-5BBA-4E7A-8EA5-C8CC738A5C20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inception</RootNamespace>
+    <AssemblyName>Inception</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aspects\AspectAttribute.cs" />
+    <Compile Include="Aspects\AspectException.cs" />
+    <Compile Include="Aspects\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspects\AspectInterceptor.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HashCodeUtility.cs" />
+    <Compile Include="IFluentInterface.cs" />
+    <Compile Include="InceptionObject.cs" />
+    <Compile Include="InversionOfControl\ArrayCastDynamicMethodGenerator.cs" />
+    <Compile Include="InversionOfControl\ArrayCastMethodCache.cs" />
+    <Compile Include="InversionOfControl\Configuration\IConfigurationConvention.cs" />
+    <Compile Include="InversionOfControl\DynamicDelegateContainerActivator.cs" />
+    <Compile Include="InversionOfControl\ProxyContainerActivator.cs" />
+    <Compile Include="InversionOfControl\TargetedProxyContainerActivator.cs" />
+    <Compile Include="InversionOfControl\SpecifiedInstanceContainerActivator.cs" />
+    <Compile Include="InversionOfControl\ContainerActivator.cs" />
+    <Compile Include="InversionOfControl\ContainerConfiguration.cs" />
+    <Compile Include="InversionOfControl\Configuration\FluentConfigurationExtensionMethods.cs" />
+    <Compile Include="InversionOfControl\Configuration\FluentForRegistration.cs" />
+    <Compile Include="InversionOfControl\Configuration\ForAllPropertiesOfTypePropertyRegistration.cs" />
+    <Compile Include="InversionOfControl\Configuration\IFluentForRegistration.cs" />
+    <Compile Include="InversionOfControl\IRegistration.cs" />
+    <Compile Include="InversionOfControl\Registration.cs" />
+    <Compile Include="InversionOfControl\Registry.cs" />
+    <Compile Include="InversionOfControl\ContainerConstructorSelector.cs" />
+    <Compile Include="InversionOfControl\Container.cs" />
+    <Compile Include="Proxying\IProxyActivator.cs" />
+    <Compile Include="Proxying\IProxyDefinitionElement.cs" />
+    <Compile Include="Proxying\Metadata\MethodInfoFieldMetadata.cs" />
+    <Compile Include="Reflection\ConstructorSelector.cs" />
+    <Compile Include="Reflection\IConstructorSelector.cs" />
+    <Compile Include="InversionOfControl\ManagedContainerLifecycle.cs" />
+    <Compile Include="InversionOfControl\ManagedTransientContainerLifecycle.cs" />
+    <Compile Include="InversionOfControl\DelegateContainerActivator.cs" />
+    <Compile Include="InversionOfControl\IContainer.cs" />
+    <Compile Include="InversionOfControl\IContainerLifecycle.cs" />
+    <Compile Include="InversionOfControl\IContainerActivator.cs" />
+    <Compile Include="InversionOfControl\LifecycleCache.cs" />
+    <Compile Include="InversionOfControl\PropertyRegistration.cs" />
+    <Compile Include="InversionOfControl\RegistrationDictionary.cs" />
+    <Compile Include="InversionOfControl\RegistrationKey.cs" />
+    <Compile Include="LazyCache.cs" />
+    <Compile Include="InversionOfControl\SingletonContainerLifecycle.cs" />
+    <Compile Include="InversionOfControl\ThreadStaticContainerLifecycle.cs" />
+    <Compile Include="InversionOfControl\TransientContainerLifecycle.cs" />
+    <Compile Include="AnonymousTypeToDictionaryConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxying\DuckTypeInterfaceDefinition.cs" />
+    <Compile Include="Proxying\FluentProxyActivation.cs" />
+    <Compile Include="Proxying\Generators\BaseInvocationMethodGenerator.cs" />
+    <Compile Include="Proxying\Generators\ClassMethodGenerator.cs" />
+    <Compile Include="Proxying\Generators\DuckTypeMethodGenerator.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\NewObjectExpression.cs" />
+    <Compile Include="Proxying\Generators\MethodMetadataMethodBuilderMap.cs" />
+    <Compile Include="Proxying\Generators\TargetedMethodGenerator.cs" />
+    <Compile Include="Proxying\Generators\InstanceFieldGenerator.cs" />
+    <Compile Include="Proxying\Generators\MethodGenerator.cs" />
+    <Compile Include="Proxying\Generators\MethodMetadataFieldGenerator.cs" />
+    <Compile Include="Proxying\Generators\NonTargetedMethodGenerator.cs" />
+    <Compile Include="Proxying\Generators\StaticConstructorGenerator.cs" />
+    <Compile Include="Proxying\InterfaceProxyDefinition.cs" />
+    <Compile Include="Proxying\Metadata\ClassProxyMetadataBuilder.cs" />
+    <Compile Include="Proxying\Metadata\ConstructorBaseParameterMetadata.cs" />
+    <Compile Include="Proxying\Metadata\ConstructorDispatcherParameterMetadata.cs" />
+    <Compile Include="Proxying\Metadata\ConstructorTargetParameterMetadata.cs" />
+    <Compile Include="Proxying\Metadata\DispatcherFieldMetadata.cs" />
+    <Compile Include="Proxying\Generators\FieldMetadataFieldBuilderMap.cs" />
+    <Compile Include="Proxying\Metadata\DuckTypeEventMetadata.cs" />
+    <Compile Include="Proxying\Metadata\DuckTypeMethodMetadata.cs" />
+    <Compile Include="Proxying\Metadata\DuckTypePropertyMetadata.cs" />
+    <Compile Include="Proxying\Metadata\InterfaceProxyMetadataBuilder.cs" />
+    <Compile Include="Proxying\Generators\MethodMetadataFieldBuilderMap.cs" />
+    <Compile Include="Proxying\Metadata\MemberLocator.cs" />
+    <Compile Include="Proxying\Metadata\MethodMetadataFactory.cs" />
+    <Compile Include="Proxying\Metadata\ProxyMetadataFactory.cs" />
+    <Compile Include="Proxying\Metadata\TargetedClassProxyMetadataBuilder.cs" />
+    <Compile Include="Proxying\Metadata\TargetedInterfaceProxyMetadataBuilder.cs" />
+    <Compile Include="Proxying\Metadata\TargetedMethodMetadata.cs" />
+    <Compile Include="Proxying\NonTargetedInterfaceDefinition.cs" />
+    <Compile Include="Proxying\ProxyDefinition.cs" />
+    <Compile Include="Proxying\ProxyActivator.cs" />
+    <Compile Include="Proxying\TargetedInterfaceProxyDefinition.cs" />
+    <Compile Include="Proxying\TargetedProxyDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Proxying\TargetedClassProxyDefinition.cs" />
+    <Compile Include="Proxying\Generators\ConstructorGenerator.cs" />
+    <Compile Include="Proxying\Generators\EventGenerator.cs" />
+    <Compile Include="Proxying\Generators\PropertyGenerator.cs" />
+    <Compile Include="Proxying\Generators\TargetedInvocationMethodGenerator.cs" />
+    <Compile Include="Proxying\Generators\TypeGenerator.cs" />
+    <Compile Include="Proxying\Metadata\ConstructorMetadata.cs" />
+    <Compile Include="Proxying\Metadata\ConstructorParameterMetadata.cs" />
+    <Compile Include="Proxying\Metadata\EventMetadata.cs" />
+    <Compile Include="Proxying\Metadata\FieldMetadata.cs" />
+    <Compile Include="Proxying\Metadata\NonTargetedMethodMetadata.cs" />
+    <Compile Include="Proxying\Metadata\MemberMetadata.cs" />
+    <Compile Include="Proxying\Metadata\MethodMetadata.cs" />
+    <Compile Include="Proxying\Metadata\ClassMethodMetadata.cs" />
+    <Compile Include="Proxying\Metadata\TargetFieldMetadata.cs" />
+    <Compile Include="Proxying\Metadata\PropertyMetadata.cs" />
+    <Compile Include="Proxying\Metadata\TargetMetadata.cs" />
+    <Compile Include="Proxying\Metadata\TypeMetadata.cs" />
+    <Compile Include="Proxying\Metadata\ProxyMetadataBuilder.cs" />
+    <Compile Include="Proxying\ProxyBuilder.cs" />
+    <Compile Include="Proxying\InterfaceDefinition.cs" />
+    <Compile Include="Proxying\MixinInterfaceDefinition.cs" />
+    <Compile Include="Proxying\FluentProxyDefinition.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\LoadInt32Expression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\CallMethodExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\CallMethodStatement.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\CastOrUnboxExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\CreateArrayExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\GetMethodHandleExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\IExpressionEmitter.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\InitializeInvokerArgumentArrayStatement.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\InitializeOutArgumentsStatement.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\InvokeDispatcherMethodStatement.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\IStatementEmitter.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\LoadArgumentExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\LoadFunctionExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\LoadLocalExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\LoadNullExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\ReturnStatement.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\StoreFieldStatement.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\LoadFieldExpression.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\IEmitter.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\StoreLocalStatement.cs" />
+    <Compile Include="Proxying\Generators\ILGeneration\StoreOutArgumentsStatement.cs" />
+    <Compile Include="Proxying\Interceptor.cs" />
+    <Compile Include="Proxying\IInterceptor.cs" />
+    <Compile Include="Proxying\IInvocation.cs" />
+    <Compile Include="Proxying\Invocation.cs" />
+    <Compile Include="Proxying\ProxyTypeCache.cs" />
+    <Compile Include="Proxying\ClassProxyDefinition.cs" />
+    <Compile Include="Proxying\ProxyTargetInvocation.cs" />
+    <Compile Include="Proxying\IProxy.cs" />
+    <Compile Include="Proxying\IProxyDispatcher.cs" />
+    <Compile Include="Proxying\ProxyDispatcher.cs" />
+    <Compile Include="Proxying\ProxyFactory.cs" />
+    <Compile Include="Reflection\ArgumentCollection.cs" />
+    <Compile Include="Proxying\ProxyConstructorSelector.cs" />
+    <Compile Include="Reflection\DynamicDelegateActivator.cs" />
+    <Compile Include="Reflection\IPropertyGetter.cs" />
+    <Compile Include="Reflection\IPropertySetter.cs" />
+    <Compile Include="Reflection\PropertyGetter.cs" />
+    <Compile Include="Reflection\PropertySetter.cs" />
+    <None Include="Proxying\_Definitions.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aspects\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
