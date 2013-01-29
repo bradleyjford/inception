@@ -4,13 +4,9 @@ namespace Inception.InversionOfControl.Configuration
 {
 	public static class FluentConfigurationExtensionMethods
 	{
-		public static IFluentForRegistration<T> For<T>(this ContainerConfiguration configuration)
+		public static IFluentForRegistration<T> For<T>(this Registry registry)
 		{
-			var result = new FluentForRegistration<T>();
-
-			configuration.AddRegistrationConfiguration(result);
-
-			return result;
+			return new FluentForRegistration<T>(registry);
 		}
 
 		//public static IFluentPropertyForRegistration<T> ForAllPropertiesOfType<T>(this ContainerConfiguration configuration)

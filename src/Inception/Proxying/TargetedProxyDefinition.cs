@@ -2,11 +2,11 @@
 
 namespace Inception.Proxying
 {
-	internal abstract class TargetedProxyDefinition : ProxyDefinition, IEquatable<TargetedProxyDefinition>
+	public abstract class TargetedProxyDefinition : ProxyDefinition, IEquatable<TargetedProxyDefinition>
 	{
 		private readonly Type _targetType;
 
-		public TargetedProxyDefinition(
+	    protected TargetedProxyDefinition(
 			Type type, 
 			Type targetType, 
 			InterfaceDefinition[] interfaces) 

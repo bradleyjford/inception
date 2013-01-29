@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InversionOfControl\DynamicDelegateActivatorTests.cs" />
+    <Compile Include="InversionOfControl\TypeScanningTests.cs" />
     <Compile Include="Proxying\ProxyDefinitionEqualityTests.cs" />
     <Compile Include="InversionOfControl\ConfigTests.cs" />
     <Compile Include="InversionOfControl\Model\ArrayInjectionService.cs" />
@@ -84,6 +85,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Inception.Tests.ScannerTest\Inception.Tests.ScannerTest.csproj">
+      <Project>{93a248e8-18da-4659-9c5c-8e2e438c7b2b}</Project>
+      <Name>Inception.Tests.ScannerTest</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Inception\Inception.csproj">
       <Project>{FD5E842E-5BBA-4E7A-8EA5-C8CC738A5C20}</Project>
       <Name>Inception</Name>

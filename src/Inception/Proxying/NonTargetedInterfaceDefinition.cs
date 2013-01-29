@@ -2,7 +2,7 @@
 
 namespace Inception.Proxying
 {
-	internal class NonTargetedInterfaceDefinition : InterfaceDefinition, IEquatable<NonTargetedInterfaceDefinition>
+	public class NonTargetedInterfaceDefinition : InterfaceDefinition, IEquatable<NonTargetedInterfaceDefinition>
 	{
 		public NonTargetedInterfaceDefinition(Type type) 
 			: base(type)

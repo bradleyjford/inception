@@ -2,7 +2,7 @@
 
 namespace Inception.Proxying
 {
-	internal class ClassProxyDefinition : ProxyDefinition
+	public class ClassProxyDefinition : ProxyDefinition
 	{
 		public ClassProxyDefinition(Type type, InterfaceDefinition[] interfaces) 
 			: base(type, interfaces)

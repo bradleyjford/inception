@@ -6,8 +6,8 @@ namespace Inception.InversionOfControl
 {
 	public sealed class ThreadStaticContainerLifecycle : ManagedContainerLifecycle
 	{
-		private readonly Dictionary<Thread, SingletonContainerLifecycle> _threadStaticLifecycles =
-			new Dictionary<Thread, SingletonContainerLifecycle>();
+		private readonly Dictionary<int, SingletonContainerLifecycle> _threadStaticLifecycles =
+			new Dictionary<int, SingletonContainerLifecycle>();
 
 		private readonly ReaderWriterLockSlim _lock = 
 			new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
@@ -32,11 +32,11 @@ namespace Inception.InversionOfControl
 
 			try
 			{
-				var thread = Thread.CurrentThread;
+				var threadId = Thread.CurrentThread.ManagedThreadId;
 
-				if (_threadStaticLifecycles.ContainsKey(thread))
+				if (_threadStaticLifecycles.ContainsKey(threadId))
 				{
-					return _threadStaticLifecycles[thread];
+					return _threadStaticLifecycles[threadId];
 				}
 
 				_lock.EnterWriteLock();
@@ -45,7 +45,7 @@ namespace Inception.InversionOfControl
 				{
 					var lifecycle = new SingletonContainerLifecycle();
 
-					_threadStaticLifecycles.Add(thread, lifecycle);
+					_threadStaticLifecycles.Add(threadId, lifecycle);
 
 					return lifecycle;
 				}

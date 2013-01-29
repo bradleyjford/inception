@@ -6,29 +6,13 @@ namespace Inception.InversionOfControl
 {
 	public class Registry : IEnumerable<IRegistration>
 	{
-		private readonly Action<ContainerConfiguration> _configuration;
-
 		private readonly Dictionary<RegistrationKey, IRegistration> _registrations =
 			new Dictionary<RegistrationKey, IRegistration>();
 
-		public Registry(Action<ContainerConfiguration> configuration)
-		{
-			_configuration = configuration;
-		}
-
-		public void Build(IContainer container)
-		{
-			var config = new ContainerConfiguration();
-
-			_configuration.Invoke(config);
-
-			foreach (var registration in config.Registrations)
-			{
-				var key = RegistrationKey.For(registration.BaseType, registration.Name);
-
-				_registrations.Add(key, registration);
-			}
-		}
+        public void Add(IRegistration registration)
+        {
+            _registrations.Add(RegistrationKey.For(registration.BaseType, registration.Name), registration);
+        }
 
 		public bool Contains(RegistrationKey key)
 		{

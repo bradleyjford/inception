@@ -2,7 +2,7 @@
 
 namespace Inception.Proxying
 {
-	internal class MixinInterfaceDefinition : InterfaceDefinition, IEquatable<MixinInterfaceDefinition>
+	public class MixinInterfaceDefinition : InterfaceDefinition, IEquatable<MixinInterfaceDefinition>
 	{
 		private readonly Type _mixinType;
 		private readonly bool _proxyInstantiated;

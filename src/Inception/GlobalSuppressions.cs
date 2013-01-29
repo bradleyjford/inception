@@ -11,7 +11,7 @@
 using System;
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Proxying", Scope = "namespace", Target = "Inception.Proxying.ILGeneration")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Ctor", Scope = "member", Target = "Inception.InversionOfControl.Configuration.IFluentForRegistration`1.#WithCtorArgument(System.String,System.Object)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Ctor", Scope = "member", Target = "Inception.InversionOfControl.Configuration.IFluentForRegistration`1.#WithConstructorArgument(System.String,System.Object)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "CastOr", Scope = "type", Target = "Inception.Proxying.ILGeneration.CastOrUnboxExpression")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Inception.Proxying.ILGeneration.CallMethodExpression.#Emit(System.Reflection.Emit.ILGenerator)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Inception.Proxying.ILGeneration.CallMethodStatement.#Emit(System.Reflection.Emit.ILGenerator)")]

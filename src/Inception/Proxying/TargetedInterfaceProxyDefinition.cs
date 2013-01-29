@@ -2,7 +2,7 @@
 
 namespace Inception.Proxying
 {
-	internal class TargetedInterfaceProxyDefinition : TargetedProxyDefinition
+	public class TargetedInterfaceProxyDefinition : TargetedProxyDefinition
 	{
 		public TargetedInterfaceProxyDefinition(
 			Type type, 

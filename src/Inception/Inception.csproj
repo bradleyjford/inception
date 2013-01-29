@@ -35,11 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aspects\AspectAttribute.cs" />
@@ -62,7 +57,6 @@
     <Compile Include="InversionOfControl\TargetedProxyContainerActivator.cs" />
     <Compile Include="InversionOfControl\SpecifiedInstanceContainerActivator.cs" />
     <Compile Include="InversionOfControl\ContainerActivator.cs" />
-    <Compile Include="InversionOfControl\ContainerConfiguration.cs" />
     <Compile Include="InversionOfControl\Configuration\FluentConfigurationExtensionMethods.cs" />
     <Compile Include="InversionOfControl\Configuration\FluentForRegistration.cs" />
     <Compile Include="InversionOfControl\Configuration\ForAllPropertiesOfTypePropertyRegistration.cs" />
@@ -193,6 +187,7 @@
     <Compile Include="Reflection\IPropertySetter.cs" />
     <Compile Include="Reflection\PropertyGetter.cs" />
     <Compile Include="Reflection\PropertySetter.cs" />
+    <Compile Include="Reflection\TypeExtensionMethods.cs" />
     <None Include="Proxying\_Definitions.cd" />
   </ItemGroup>
   <ItemGroup>

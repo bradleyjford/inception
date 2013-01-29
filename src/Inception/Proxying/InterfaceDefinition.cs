@@ -2,7 +2,7 @@
 
 namespace Inception.Proxying
 {
-	internal abstract class InterfaceDefinition : IProxyDefinitionElement
+	public abstract class InterfaceDefinition : IProxyDefinitionElement
 	{
 		private readonly Type _type;
 

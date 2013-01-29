@@ -45,11 +45,10 @@ namespace Inception.Proxying
 
 			var definition = specification.ToProxyDefinition();
 
-			return DefineProxy<T>(definition);
+			return DefineProxy(definition);
 		}
 
-		internal Type DefineProxy<T>(ProxyDefinition definition)
-			where T : class
+		public Type DefineProxy(ProxyDefinition definition)
 		{
 			return _typeCache[definition];
 		}
@@ -58,6 +57,11 @@ namespace Inception.Proxying
 		{
 			var baseType = typeof(T);
 
+		    return (T)CreateProxy(baseType, config);
+		}
+
+		public object CreateProxy(Type baseType, Action<FluentProxyActivation> config)
+		{
 			var specification = new FluentProxyActivation(baseType);
 
 			config(specification);
@@ -68,7 +72,7 @@ namespace Inception.Proxying
 
 			specification.ConstructorArguments.Insert(0, "dispatcher", specification.Dispatcher);
 
-			return (T)_activator.CreateInstance(type, specification.ConstructorArguments);
+			return _activator.CreateInstance(type, specification.ConstructorArguments);
 		}
 	}
 }

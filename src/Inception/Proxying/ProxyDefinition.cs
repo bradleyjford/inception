@@ -3,14 +3,14 @@ using System.Linq;
 
 namespace Inception.Proxying
 {
-	internal abstract class ProxyDefinition : IProxyDefinitionElement, IEquatable<ProxyDefinition>
+	public abstract class ProxyDefinition : IProxyDefinitionElement, IEquatable<ProxyDefinition>
 	{
 		private const string ProxyTypeNameFormat = @"<Proxy{0}>{1}";
 
 		private readonly Type _primaryType;
 		private readonly InterfaceDefinition[] _interfaces;
 
-		public ProxyDefinition(Type primaryType, InterfaceDefinition[] interfaces)
+	    protected ProxyDefinition(Type primaryType, InterfaceDefinition[] interfaces)
 		{
 			_primaryType = primaryType;
 			_interfaces = interfaces ?? new InterfaceDefinition[0];

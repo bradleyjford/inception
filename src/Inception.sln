@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5A77B5
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inception.Tests.ScannerTest", "Inception.Tests.ScannerTest\Inception.Tests.ScannerTest.csproj", "{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{EB55E4DC-8503-4820-B5F5-2A682E4F14FF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EB55E4DC-8503-4820-B5F5-2A682E4F14FF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EB55E4DC-8503-4820-B5F5-2A682E4F14FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{93A248E8-18DA-4659-9C5C-8E2E438C7B2B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

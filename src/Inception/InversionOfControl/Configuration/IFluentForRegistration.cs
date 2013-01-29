@@ -7,10 +7,10 @@ namespace Inception.InversionOfControl.Configuration
 	{
 		IFluentForRegistration<TBase> Singleton();
 
-		IFluentForRegistration<TBase> Proxy(ProxyFactory proxyFactory, IInterceptor interceptor);
-		IFluentForRegistration<TBase> Proxy(ProxyFactory proxyFactory, IProxyDispatcher proxtDispatcher);
+		IFluentForRegistration<TBase> Proxy(IInterceptor interceptor);
+		IFluentForRegistration<TBase> Proxy(IProxyDispatcher proxyDispatcher);
 
-		IFluentForRegistration<TBase> WithCtorArgument(string parameterName, object value);
+		IFluentForRegistration<TBase> WithConstructorArgument(string parameterName, object value);
 
 		IFluentForRegistration<TBase> Lifecycle<TLifecycle>() where TLifecycle : IContainerLifecycle;
 

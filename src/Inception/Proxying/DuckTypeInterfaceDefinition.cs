@@ -2,7 +2,7 @@
 
 namespace Inception.Proxying
 {
-	internal class DuckTypeInterfaceDefinition : InterfaceDefinition, IEquatable<DuckTypeInterfaceDefinition>
+	public class DuckTypeInterfaceDefinition : InterfaceDefinition, IEquatable<DuckTypeInterfaceDefinition>
 	{
 		public DuckTypeInterfaceDefinition(Type type) 
 			: base(type)

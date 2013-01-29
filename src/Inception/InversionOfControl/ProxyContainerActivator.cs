@@ -7,7 +7,6 @@ namespace Inception.InversionOfControl
 {
 	public class ProxyContainerActivator : ContainerActivator
 	{
-		private readonly ProxyFactory _proxyFactory;
 		private readonly IProxyDispatcher _proxyDispatcher;
 		private readonly Type _type;
 		private readonly ConstructorInfo _constructor;
@@ -15,14 +14,12 @@ namespace Inception.InversionOfControl
 		private readonly IInterceptor _interceptor;
 
 		public ProxyContainerActivator(
-			ProxyFactory proxyFactory,
 			IProxyDispatcher proxyDispatcher,
 			Type type,
 			ConstructorInfo constructor,
 			ArgumentCollection constructorArguments,
 			IInterceptor interceptor)
 		{
-			_proxyFactory = proxyFactory;
 			_proxyDispatcher = proxyDispatcher;
 			_type = type;
 			_constructor = constructor;
@@ -32,12 +29,14 @@ namespace Inception.InversionOfControl
 
 		public override object CreateInstance(IContainer container)
 		{
-			var args = PrepareConstructorArguments(_constructor, _constructorArguments, container);
+            //var proxyFactory = container.GetInstance<ProxyFactory>();
 
-			var dispatcher = _proxyDispatcher ?? new ProxyDispatcher(new [] { _interceptor });
+            //var args = PrepareConstructorArguments(_constructor, _constructorArguments, container);
 
-			// TODO: Fix
-			return null; // _proxyFactory.CreateProxy(_type, dispatcher, args);
+            //var dispatcher = _proxyDispatcher ?? new ProxyDispatcher(new [] { _interceptor });
+
+            //return proxyFactory.DefineProxy(_type);
+            throw new NotImplementedException();
 		}
 	}
 }

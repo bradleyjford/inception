@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Inception.InversionOfControl
 {
-	public interface IContainer
+	public interface IContainer : IDisposable
 	{
 		IContainer ParentContainer { get; }
 
@@ -14,6 +14,7 @@ namespace Inception.InversionOfControl
 		//object TryGetInstance(Type type);
 		object GetInstance(Type type);
 		object GetInstance(Type type, string name);
+
 		IEnumerable<T> GetAllInstances<T>();
 		IEnumerable<object> GetAllInstances(Type type);
 	}

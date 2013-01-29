@@ -6,38 +6,35 @@ namespace Inception.InversionOfControl.Configuration
 {
 	public class FluentForRegistration<TBase> : IRegistration, IFluentForRegistration<TBase>
 	{
-		private string _name;
+	    private readonly Registry _registry;
+	    private string _name;
 		private Type _concreteType;
 		private Type _lifecycleType = typeof(TransientContainerLifecycle);
 		private IContainerActivator _activator;
-		
 
 		private bool _generateProxy;
-		private ProxyFactory _proxyFactory;
 		private IProxyDispatcher _proxyDispatcher;
 		private IInterceptor _interceptor;
 
-		private ArgumentCollection _constructorArguments = new ArgumentCollection();
+		private readonly ArgumentCollection _constructorArguments = new ArgumentCollection();
 		private IConstructorSelector _constructorSelector;
 
-		internal FluentForRegistration()
+		internal FluentForRegistration(Registry registry)
 		{
-			
+		    _registry = registry;
 		}
 
-		public IFluentForRegistration<TBase> Proxy(ProxyFactory proxyFactory, IInterceptor interceptor)
+	    public IFluentForRegistration<TBase> Proxy(IInterceptor interceptor)
 		{
 			_generateProxy = true;
-			_proxyFactory = proxyFactory;
 			_interceptor = interceptor;
 
 			return this;
 		}
 
-		public IFluentForRegistration<TBase> Proxy(ProxyFactory proxyFactory, IProxyDispatcher proxyDispatcher)
+		public IFluentForRegistration<TBase> Proxy(IProxyDispatcher proxyDispatcher)
 		{
 			_generateProxy = true;
-			_proxyFactory = proxyFactory;
 			_proxyDispatcher = proxyDispatcher;
 
 			return this;
@@ -86,7 +83,6 @@ namespace Inception.InversionOfControl.Configuration
 			if (_generateProxy)
 			{
 				_activator = new ProxyContainerActivator(
-					_proxyFactory,
 					_proxyDispatcher,
 					typeof(TConcrete),
 					constructor,
@@ -100,7 +96,14 @@ namespace Inception.InversionOfControl.Configuration
 					constructor, 
 					_constructorArguments);
 			}
+
+		    Build();
 		}
+
+        private void Build()
+        {
+            _registry.Add(this);
+        }
 
 		public void Use<TConcrete>(Func<IContainer, TConcrete> activationDelegate)
 			where TConcrete : TBase
@@ -110,12 +113,13 @@ namespace Inception.InversionOfControl.Configuration
 			if (_generateProxy)
 			{
 				_activator = new TargetedProxyContainerActivator(
-					_proxyFactory,
 					_proxyDispatcher,
 					typeof(TConcrete),
 					_activator,
 					_interceptor);
 			}
+
+		    Build();
 		}
 
 		public void Use<TConcrete>(TConcrete singletonInstance)
@@ -127,15 +131,16 @@ namespace Inception.InversionOfControl.Configuration
 			if (_generateProxy)
 			{
 				_activator = new TargetedProxyContainerActivator(
-					_proxyFactory,
 					_proxyDispatcher,
 					typeof(TConcrete),
 					_activator,
 					_interceptor);
 			}
+
+		    Build();
 		}
 
-		public IFluentForRegistration<TBase> WithCtorArgument(string parameterName, object value)
+		public IFluentForRegistration<TBase> WithConstructorArgument(string parameterName, object value)
 		{
 			_constructorArguments.Add(parameterName, value);
 

@@ -4,7 +4,7 @@ using Inception.Reflection;
 
 namespace Inception.Proxying
 {
-	public class FluentProxyActivation : FluentProxyDefinition
+	public class FluentProxyActivation : FluentProxyDefinition, IFluentInterface
 	{
 		private readonly ArgumentCollection _constructorArguments =
 			new ArgumentCollection();

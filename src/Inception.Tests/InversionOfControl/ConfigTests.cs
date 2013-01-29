@@ -2,6 +2,7 @@
 using System.Linq;
 using Inception.InversionOfControl;
 using Inception.InversionOfControl.Configuration;
+using Inception.Proxying;
 using Inception.Tests.InversionOfControl.Model;
 using NUnit.Framework;
 
@@ -16,7 +17,7 @@ namespace Inception.Tests.InversionOfControl
 			var container = new Container(r =>
 			{
 				r.For<ITestService>()
-					.WithCtorArgument("name", "Hello World")
+					.WithConstructorArgument("name", "Hello World")
 					.Use<ConstructorParameterService>();  	
 	
 				r.For<ITestRepository>()
@@ -101,7 +102,7 @@ namespace Inception.Tests.InversionOfControl
 			var childContainer = container.CreateChildContainer(r =>
 			{
 				r.For<ITestService>()
-					.WithCtorArgument("name", "Hello World!")
+					.WithConstructorArgument("name", "Hello World!")
 					.Use<ConstructorParameterService>();
 			});
 
@@ -115,30 +116,28 @@ namespace Inception.Tests.InversionOfControl
 			Assert.IsNotNull(service);
 		}
 
-		//[Test]
-		//public void CanInstantiateProxy()
-		//{
-		//    var proxyFactory = new ProxyFactory("ConfigTests.Proxies");
+        //[Test]
+        //public void CanInstantiateProxy()
+        //{
+        //    var container = new Container(r =>
+        //    {
+        //        r.For<ITestRepository>()
+        //            .Singleton()
+        //            .Use<TestRepository>();
 
-		//    var container = new Container(r =>
-		//    {
-		//        r.For<ITestRepository>()
-		//            .Singleton()
-		//            .Use<TestRepository>();
+        //        //var interceptor = new TestInterfaceInterceptor();
 
-		//        var interceptor = new TestInterfaceInterceptor();
+        //        r.For<ITestService>()
+        //            .Singleton()
+        //            .Proxy(interceptor: null)
+        //            .Use<TestService>();
+        //    });
 
-		//        r.For<ITestService>()
-		//            .Singleton()
-		//            .Proxy(proxyFactory, interceptor)
-		//            .Use<TestService>();
-		//    });
+        //    var service1 = container.GetInstance<ITestService>();
 
-		//    var service1 = container.GetInstance<ITestService>();
-
-		//    Assert.IsNotNull(service1);
-		//    Assert.AreEqual(Int32.MaxValue, service1.DoSomething(1));
-		//}
+        //    Assert.IsNotNull(service1);
+        //    Assert.AreEqual(Int32.MaxValue, service1.DoSomething(1));
+        //}
 
 		[Test]
 		public void CanRegisterAndRetrieveNamedInstance()

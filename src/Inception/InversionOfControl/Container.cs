@@ -5,14 +5,14 @@ using Inception.Reflection;
 
 namespace Inception.InversionOfControl
 {
-	public class Container : IContainer, IDisposable
+	public class Container : IContainer
 	{
 		private readonly Registry _registry;
 
-		private readonly RegistrationDictionary _adhocRegistrations =
+		private readonly RegistrationDictionary _onDemandRegistrations =
 			new RegistrationDictionary();
 
-		private readonly IConstructorSelector _adhocConstructorSelector = new ContainerConstructorSelector();
+		private readonly IConstructorSelector _defaultConstructorSelector = new ContainerConstructorSelector();
 
 		private readonly LifecycleCache _lifecycles = new LifecycleCache();
 
@@ -21,21 +21,19 @@ namespace Inception.InversionOfControl
 
 		private bool _disposed;
 
-		public Container(Action<ContainerConfiguration> configuration)
+		public Container(Action<Registry> configuration)
 		{
-			if (configuration == null) throw new ArgumentNullException("configuration");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
-			_registry = new Registry(configuration);
+            _registry = new Registry();
 
-			_registry.Build(this);
+		    configuration(_registry);
 		}
 
 		private Container(Container parentContainer, Registry registry)
 		{
 			_parentContainer = parentContainer;
 			_registry = registry;
-
-			registry.Build(this);
 		}
 
 		public IContainer ParentContainer
@@ -43,43 +41,55 @@ namespace Inception.InversionOfControl
 			get { return _parentContainer; }
 		}
 
-		public IContainer CreateChildContainer(Action<ContainerConfiguration> config)
+		public IContainer CreateChildContainer(Action<Registry> configuration)
 		{
-			if (config == null) throw new ArgumentNullException("config");
+            if (_disposed) throw new ObjectDisposedException("Container");
+            if (configuration == null) throw new ArgumentNullException("configuration");
 
-			if (_disposed) throw new ObjectDisposedException("Container");
+            var registry = new Registry();
 
-			if (_childContainers == null)
-			{
-				_childContainers = new List<WeakReference>();
-			}
-
-			var registry = new Registry(config);
+		    configuration(registry);
 
 			var childContainer = new Container(this, registry);
 
-			_childContainers.Add(new WeakReference(childContainer));
+			AddChildContainer(childContainer);
 
 			return childContainer;
 		}
 
-		public T GetInstance<T>(string name) where T : class
+	    private void AddChildContainer(Container childContainer)
+	    {
+            if (_childContainers == null)
+            {
+                _childContainers = new List<WeakReference>();
+            }
+
+	        _childContainers.Add(new WeakReference(childContainer));
+	    }
+
+	    public T GetInstance<T>(string name) where T : class
 		{
-			return (T)GetInstance(typeof(T), name);
+			return (T)GetInstanceCore(typeof(T), name);
 		}
 
 		public T GetInstance<T>() where T : class
 		{
-			return (T)GetInstance(typeof(T), null);
+			return (T)GetInstanceCore(typeof(T), null);
 		}
 
 		public object GetInstance(Type type)
 		{
-			return GetInstance(type, null);
+			return GetInstanceCore(type, null);
 		}
 
-		public object GetInstance(Type type, string name)
+        public object GetInstance(Type type, string name)
+        {
+            return GetInstanceCore(type, name);
+        }
+
+		protected virtual object GetInstanceCore(Type type, string name)
 		{
+            if (_disposed) throw new ObjectDisposedException("Container");
 			if (type == null) throw new ArgumentNullException("type");
 
 			var registrationKey = RegistrationKey.For(type, name);
@@ -96,16 +106,12 @@ namespace Inception.InversionOfControl
 
 		public IEnumerable<T> GetAllInstances<T>()
 		{
-			var registrations = _registry.Where(r => r.BaseType == typeof(T));
-
-			foreach (var registration in registrations)
-			{
-				yield return (T)ResolveInstance(RegistrationKey.For(typeof(T), registration.Name));
-			}
+		    return GetAllInstances(typeof(T)).Cast<T>();
 		}
 
 		public IEnumerable<object> GetAllInstances(Type type)
 		{
+            if (_disposed) throw new ObjectDisposedException("Container");
 			if (type == null) throw new ArgumentNullException("type");
 
 			var registrations = _registry.Where(r => r.BaseType == type);
@@ -114,11 +120,6 @@ namespace Inception.InversionOfControl
 			{
 				yield return ResolveInstance(RegistrationKey.For(type, registration.Name));
 			}
-		}
-
-		protected object ResolveInstance(Type type)
-		{
-			return ResolveInstance(RegistrationKey.For(type));
 		}
 
 		protected virtual object ResolveInstance(RegistrationKey registrationKey)
@@ -131,7 +132,7 @@ namespace Inception.InversionOfControl
 			{
 				var registration = _registry[registrationKey];
 
-				result = _lifecycles[registration.LifecycleType].GetInstance(this, registration);
+				result = GetRegistrationInstance(registration);
 			}
 			else if (_parentContainer != null)
 			{
@@ -140,48 +141,58 @@ namespace Inception.InversionOfControl
 
 			if (result == null)
 			{
-				result = ResolveAdhocInstance(registrationKey);
+				result = ResolveNonRegisteredInstance(registrationKey);
 			}
 
 			return result;
 		}
 
-		protected virtual object ResolveAdhocInstance(RegistrationKey registrationKey)
+		protected virtual object ResolveNonRegisteredInstance(RegistrationKey registrationKey)
 		{
-			var type = registrationKey.Type;
-
 			object instance = null;
 
-			Registration registration;
+            var type = registrationKey.Type;
 
-			if (_adhocRegistrations.ContainsKey(registrationKey))
+			if (_onDemandRegistrations.ContainsKey(registrationKey))
 			{
-				registration = (Registration)_adhocRegistrations[registrationKey];
+				var registration = (Registration)_onDemandRegistrations[registrationKey];
 
-				instance = _lifecycles[registration.LifecycleType].GetInstance(this, registration);
+				instance = GetRegistrationInstance(registration);
 			}
-			else if (!type.IsAbstract && !type.IsInterface)
+			else if (type.CanBeInstantiated())
 			{
-				registration = new Registration(type, null)
-				{
-					ConcreteType = type,
-					LifecycleType = typeof(TransientContainerLifecycle)
-				};
+				var registration = CreateOnDemandRegistration(type);
 
-				registration.Activator = new DynamicDelegateContainerActivator(
-					type,
-					_adhocConstructorSelector.Select(type, new ArgumentCollection()),
-					null);
+			    _onDemandRegistrations.Add(registrationKey, registration);
 
-				_adhocRegistrations.Add(registrationKey, registration);
-
-				instance = _lifecycles[registration.LifecycleType].GetInstance(this, registration);
+			    instance = GetRegistrationInstance(registration);
 			}
 
 			return instance;
 		}
 
-		public void Dispose()
+	    private Registration CreateOnDemandRegistration(Type type)
+	    {
+	        var registration = new Registration(type, null)
+	        {
+	            ConcreteType = type,
+	            LifecycleType = typeof(TransientContainerLifecycle)
+	        };
+
+	        registration.Activator = new DynamicDelegateContainerActivator(
+	            type,
+	            _defaultConstructorSelector.Select(type, new ArgumentCollection()),
+	            null);
+
+	        return registration;
+	    }
+
+	    private object GetRegistrationInstance(IRegistration registration)
+	    {
+	        return _lifecycles[registration.LifecycleType].GetInstance(this, registration);
+	    }
+
+	    public void Dispose()
 		{
 			Dispose(true);
 
