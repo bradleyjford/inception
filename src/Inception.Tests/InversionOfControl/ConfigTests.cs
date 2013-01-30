@@ -8,113 +8,113 @@ using NUnit.Framework;
 
 namespace Inception.Tests.InversionOfControl
 {
-	[TestFixture]
-	public class ConfigTests
-	{
-		[Test]
-		public void Test()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestService>()
-					.WithConstructorArgument("name", "Hello World")
-					.Use<ConstructorParameterService>();  	
-	
-				r.For<ITestRepository>()
-					.Singleton()
-					.Use<TestRepository>();
-			});
+    [TestFixture]
+    public class ConfigTests
+    {
+        [Test]
+        public void Test()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestService>()
+                    .WithConstructorArgument("name", "Hello World")
+                    .Use<ConstructorParameterService>();      
+    
+                r.For<ITestRepository>()
+                    .Singleton()
+                    .Use<TestRepository>();
+            });
 
-			var service = container.GetInstance<ITestService>();
+            var service = container.GetInstance<ITestService>();
 
-			Assert.IsNotNull(service);
-			Assert.AreEqual("Hello World", ((ConstructorParameterService)service).ConstructorArgumentValue);
-		}
+            Assert.IsNotNull(service);
+            Assert.AreEqual("Hello World", ((ConstructorParameterService)service).ConstructorArgumentValue);
+        }
 
-		[Test]
-		public void GettingSingletonReturnsSameInstance()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>().Singleton().Use<TestRepository>();			                                           		
-			});
+        [Test]
+        public void GettingSingletonReturnsSameInstance()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>().Singleton().Use<TestRepository>();                                                               
+            });
 
-			var repository1 = container.GetInstance<ITestRepository>();
-			var repository2 = container.GetInstance<ITestRepository>();
+            var repository1 = container.GetInstance<ITestRepository>();
+            var repository2 = container.GetInstance<ITestRepository>();
 
-			Assert.AreSame(repository1, repository2);
-		}
+            Assert.AreSame(repository1, repository2);
+        }
 
-		[Test]
-		public void GettingTransientReturnsUniqueInstances()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>().Use<TestRepository>();
-			});
+        [Test]
+        public void GettingTransientReturnsUniqueInstances()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>().Use<TestRepository>();
+            });
 
-			var repository1 = container.GetInstance<ITestRepository>();
-			var repository2 = container.GetInstance<ITestRepository>();
-			
-			Assert.AreNotSame(repository1, repository2);
-		}
+            var repository1 = container.GetInstance<ITestRepository>();
+            var repository2 = container.GetInstance<ITestRepository>();
+            
+            Assert.AreNotSame(repository1, repository2);
+        }
 
-		[Test]
-		public void CanConstructInstanceWithArray()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>()
-					.Named("Repository1")
-					.Use<TestRepository>();
+        [Test]
+        public void CanConstructInstanceWithArray()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>()
+                    .Named("Repository1")
+                    .Use<TestRepository>();
 
-				r.For<ITestRepository>()
-					.Named("Repository2")
-					.Use<TestRepository>();  		
-			});
+                r.For<ITestRepository>()
+                    .Named("Repository2")
+                    .Use<TestRepository>();          
+            });
 
-			var service = container.GetInstance<ArrayInjectionService>();
+            var service = container.GetInstance<ArrayInjectionService>();
 
-			Assert.AreEqual(2, service.Repositories.Length);
-		}
+            Assert.AreEqual(2, service.Repositories.Length);
+        }
 
-		[Test]
-		public void CanInstantiateUnregisteredType()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>().Use<TestRepository>();
-			});
+        [Test]
+        public void CanInstantiateUnregisteredType()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>().Use<TestRepository>();
+            });
 
-			var service = container.GetInstance<TestService>();
+            var service = container.GetInstance<TestService>();
 
-			Assert.IsNotNull(service);
-		}
+            Assert.IsNotNull(service);
+        }
 
-		[Test]
-		public void ChildContainerCanResolveParentRegistration()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>().Singleton().Use<TestRepository>();
-			});
+        [Test]
+        public void ChildContainerCanResolveParentRegistration()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>().Singleton().Use<TestRepository>();
+            });
 
-			var childContainer = container.CreateChildContainer(r =>
-			{
-				r.For<ITestService>()
-					.WithConstructorArgument("name", "Hello World!")
-					.Use<ConstructorParameterService>();
-			});
+            var childContainer = container.CreateChildContainer(r =>
+            {
+                r.For<ITestService>()
+                    .WithConstructorArgument("name", "Hello World!")
+                    .Use<ConstructorParameterService>();
+            });
 
-			var service = childContainer.GetInstance<ITestService>();
+            var service = childContainer.GetInstance<ITestService>();
 
-			Assert.Throws<NullReferenceException>(() =>
-			{
-			    container.GetInstance<ITestService>();
-			});
+            Assert.Throws<NullReferenceException>(() =>
+            {
+                container.GetInstance<ITestService>();
+            });
 
-			Assert.IsNotNull(service);
-		}
+            Assert.IsNotNull(service);
+        }
 
         //[Test]
         //public void CanInstantiateProxy()
@@ -139,77 +139,77 @@ namespace Inception.Tests.InversionOfControl
         //    Assert.AreEqual(Int32.MaxValue, service1.DoSomething(1));
         //}
 
-		[Test]
-		public void CanRegisterAndRetrieveNamedInstance()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>()
-					.Named("Test")
-					.Use<TestRepository>();
-			});
+        [Test]
+        public void CanRegisterAndRetrieveNamedInstance()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>()
+                    .Named("Test")
+                    .Use<TestRepository>();
+            });
 
-			var repository = container.GetInstance<ITestRepository>("Test");
+            var repository = container.GetInstance<ITestRepository>("Test");
 
-			Assert.IsNotNull(repository);
-		}
+            Assert.IsNotNull(repository);
+        }
 
-		[Test]
-		public void RequestingUnnamedInstanceDoesNotReturnNamedInstance()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>()
-					.Named("Test")
-					.Use<TestRepository>();
-			});
+        [Test]
+        public void RequestingUnnamedInstanceDoesNotReturnNamedInstance()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>()
+                    .Named("Test")
+                    .Use<TestRepository>();
+            });
 
-			Assert.Throws<NullReferenceException>(() =>
-				container.GetInstance<ITestRepository>()
-			);
-		}
+            Assert.Throws<NullReferenceException>(() =>
+                container.GetInstance<ITestRepository>()
+            );
+        }
 
-		[Test]
-		public void CanGetAllInstancesOfType()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>()
-					.Named("Repository1")
-					.Singleton()
-					.Use<TestRepository>();
+        [Test]
+        public void CanGetAllInstancesOfType()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>()
+                    .Named("Repository1")
+                    .Singleton()
+                    .Use<TestRepository>();
 
-				r.For<ITestRepository>()
-					.Named("Repository2")
-					.Singleton()
-					.Use<TestRepository>();
-			});
+                r.For<ITestRepository>()
+                    .Named("Repository2")
+                    .Singleton()
+                    .Use<TestRepository>();
+            });
 
-			var instances = container.GetAllInstances<ITestRepository>();
+            var instances = container.GetAllInstances<ITestRepository>();
 
-			Assert.AreEqual(2, instances.Count());
-			Assert.AreNotSame(instances.ElementAt(0), instances.ElementAt(1));
-		}
+            Assert.AreEqual(2, instances.Count());
+            Assert.AreNotSame(instances.ElementAt(0), instances.ElementAt(1));
+        }
 
-		[Test]
-		public void CanInstantiateObjectWithConstructorArray()
-		{
-			var container = new Container(r =>
-			{
-				r.For<ITestRepository>()
-					.Named("Repository1")
-					.Singleton()
-					.Use<TestRepository>();
+        [Test]
+        public void CanInstantiateObjectWithConstructorArray()
+        {
+            var container = new Container(r =>
+            {
+                r.For<ITestRepository>()
+                    .Named("Repository1")
+                    .Singleton()
+                    .Use<TestRepository>();
 
-				r.For<ITestRepository>()
-					.Named("Repository2")
-					.Singleton()
-					.Use<TestRepository>();
-			});
+                r.For<ITestRepository>()
+                    .Named("Repository2")
+                    .Singleton()
+                    .Use<TestRepository>();
+            });
 
-			var arrayService = container.GetInstance<ArrayInjectionService>();
+            var arrayService = container.GetInstance<ArrayInjectionService>();
 
-			Assert.AreEqual(2, arrayService.Repositories.Count());
-		}
-	}
+            Assert.AreEqual(2, arrayService.Repositories.Count());
+        }
+    }
 }

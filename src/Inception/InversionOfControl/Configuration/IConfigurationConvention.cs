@@ -2,8 +2,8 @@
 
 namespace Inception.InversionOfControl.Configuration
 {
-	public interface IConfigurationConvention
-	{
-		 
-	}
+    public interface IConfigurationConvention
+    {
+         
+    }
 }

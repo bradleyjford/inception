@@ -2,8 +2,8 @@
 
 namespace Inception.InversionOfControl
 {
-	public interface IContainerActivator
-	{
-		object CreateInstance(IContainer container);
-	}
+    public interface IContainerActivator
+    {
+        object CreateInstance(IContainer container);
+    }
 }

@@ -6,13 +6,13 @@ namespace Inception.Proxying.Generators.ILGeneration
 {
     internal sealed class CallMethodExpression : IExpressionEmitter
     {
-    	private readonly MethodInfo _method;
-    	private readonly IExpressionEmitter[] _arguments;
+        private readonly MethodInfo _method;
+        private readonly IExpressionEmitter[] _arguments;
 
         public CallMethodExpression(MethodInfo method, IExpressionEmitter[] arguments)
         {
-        	_method = method;
-        	_arguments = arguments;
+            _method = method;
+            _arguments = arguments;
         }
 
         public void Emit(ILGenerator il)
@@ -28,11 +28,11 @@ namespace Inception.Proxying.Generators.ILGeneration
             }
             else if (_method.IsVirtual)
             {
-            	il.Emit(OpCodes.Callvirt, _method);
+                il.Emit(OpCodes.Callvirt, _method);
             }
-			else
-			{
-        		il.Emit(OpCodes.Call, _method);
+            else
+            {
+                il.Emit(OpCodes.Call, _method);
             }
 
             if (_method.ReturnType.IsValueType)

@@ -3,33 +3,33 @@ using Inception.Proxying;
 
 namespace Inception.InversionOfControl
 {
-	public class TargetedProxyContainerActivator : ContainerActivator
-	{
-		private readonly IProxyDispatcher _proxyDispatcher;
-		private readonly Type _type;
-		private readonly IContainerActivator _activator;
-		private readonly IInterceptor _interceptor;
+    public class TargetedProxyContainerActivator : ContainerActivator
+    {
+        private readonly IProxyDispatcher _proxyDispatcher;
+        private readonly Type _type;
+        private readonly IContainerActivator _activator;
+        private readonly IInterceptor _interceptor;
 
-		public TargetedProxyContainerActivator(
-			IProxyDispatcher proxyDispatcher,
-			Type type,
-			IContainerActivator activator,
-			IInterceptor interceptor)
-		{
-			_proxyDispatcher = proxyDispatcher;
-			_type = type;
-			_activator = activator;
-			_interceptor = interceptor;
-		}
+        public TargetedProxyContainerActivator(
+            IProxyDispatcher proxyDispatcher,
+            Type type,
+            IContainerActivator activator,
+            IInterceptor interceptor)
+        {
+            _proxyDispatcher = proxyDispatcher;
+            _type = type;
+            _activator = activator;
+            _interceptor = interceptor;
+        }
 
-		public override object CreateInstance(IContainer container)
-		{
-			var dispatcher = _proxyDispatcher ?? new ProxyDispatcher(new[] { _interceptor });
+        public override object CreateInstance(IContainer container)
+        {
+            var dispatcher = _proxyDispatcher ?? new ProxyDispatcher(new[] { _interceptor });
 
-			var instance = _activator.CreateInstance(container);
+            var instance = _activator.CreateInstance(container);
 
-			//TODO: Fix
-			return null; // _proxyFactory.CreateTargetedProxy(instance, dispatcher);
-		}
-	}
+            //TODO: Fix
+            return null; // _proxyFactory.CreateTargetedProxy(instance, dispatcher);
+        }
+    }
 }

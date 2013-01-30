@@ -2,8 +2,8 @@
 
 namespace Inception.Reflection
 {
-	public interface IPropertySetter
-	{
-		void SetValue(object target, object value);
-	}
+    public interface IPropertySetter
+    {
+        void SetValue(object target, object value);
+    }
 }

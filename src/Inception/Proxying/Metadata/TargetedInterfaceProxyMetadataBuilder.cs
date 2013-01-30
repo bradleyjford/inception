@@ -3,63 +3,63 @@ using System.Collections.Generic;
 
 namespace Inception.Proxying.Metadata
 {
-	internal class TargetedInterfaceProxyMetadataBuilder : ProxyMetadataBuilder
-	{
-		private readonly TargetedInterfaceProxyDefinition _proxyDefinition;
-		
-		private TargetFieldMetadata _targetField;
+    internal class TargetedInterfaceProxyMetadataBuilder : ProxyMetadataBuilder
+    {
+        private readonly TargetedInterfaceProxyDefinition _proxyDefinition;
+        
+        private TargetFieldMetadata _targetField;
 
-		public TargetedInterfaceProxyMetadataBuilder(TargetedInterfaceProxyDefinition proxyDefinition) 
-			: base(proxyDefinition, null)
-		{
-			_proxyDefinition = proxyDefinition;
-		}
+        public TargetedInterfaceProxyMetadataBuilder(TargetedInterfaceProxyDefinition proxyDefinition) 
+            : base(proxyDefinition, null)
+        {
+            _proxyDefinition = proxyDefinition;
+        }
 
-		protected override void InitializeFields()
-		{
-			base.InitializeFields();
+        protected override void InitializeFields()
+        {
+            base.InitializeFields();
 
-			_targetField = new TargetFieldMetadata("_target", _proxyDefinition.TargetType);
+            _targetField = new TargetFieldMetadata("_target", _proxyDefinition.TargetType);
 
-			Fields.Add(_targetField);
-		}
+            Fields.Add(_targetField);
+        }
 
-		protected override void InitializeConstructors()
-		{
-			var parameters = InitializeConstructorParameters();
+        protected override void InitializeConstructors()
+        {
+            var parameters = InitializeConstructorParameters();
 
-			var constructor = new ConstructorMetadata(parameters);
+            var constructor = new ConstructorMetadata(parameters);
 
-			Constructors.Add(constructor);
-		}
+            Constructors.Add(constructor);
+        }
 
-		private ConstructorParameterMetadata[] InitializeConstructorParameters()
-		{
-			var parameters = new List<ConstructorParameterMetadata>();
+        private ConstructorParameterMetadata[] InitializeConstructorParameters()
+        {
+            var parameters = new List<ConstructorParameterMetadata>();
 
-			var parameterSequence = 1;
+            var parameterSequence = 1;
 
-			parameters.Add(new ConstructorDispatcherParameterMetadata(parameterSequence++, DispatcherField));
-			parameters.Add(new ConstructorTargetParameterMetadata(parameterSequence++, "target", _targetField));
+            parameters.Add(new ConstructorDispatcherParameterMetadata(parameterSequence++, DispatcherField));
+            parameters.Add(new ConstructorTargetParameterMetadata(parameterSequence++, "target", _targetField));
 
-			GetMixinConstructorParameters(parameterSequence, parameters);
+            GetMixinConstructorParameters(parameterSequence, parameters);
 
-			return parameters.ToArray();
-		}
+            return parameters.ToArray();
+        }
 
-		protected override void InitializeMethods()
-		{
-			InitializeDefinitionMethods(_proxyDefinition, _targetField, false);
-		}
+        protected override void InitializeMethods()
+        {
+            InitializeDefinitionMethods(_proxyDefinition, _targetField, false);
+        }
 
-		protected override void InitializeProperties()
-		{
-			InitializeDefinitionProperties(_proxyDefinition, _targetField, false);
-		}
+        protected override void InitializeProperties()
+        {
+            InitializeDefinitionProperties(_proxyDefinition, _targetField, false);
+        }
 
-		protected override void InitializeEvents()
-		{
-			InitializeDefinitionEvents(_proxyDefinition, _targetField, false);
-		}
-	}
+        protected override void InitializeEvents()
+        {
+            InitializeDefinitionEvents(_proxyDefinition, _targetField, false);
+        }
+    }
 }

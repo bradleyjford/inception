@@ -2,7 +2,7 @@ using System;
 
 namespace Inception.Proxying
 {
-	public interface IProxy
-	{
-	}
+    public interface IProxy
+    {
+    }
 }

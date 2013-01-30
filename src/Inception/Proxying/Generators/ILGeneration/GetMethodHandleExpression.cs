@@ -8,17 +8,17 @@ namespace Inception.Proxying.Generators.ILGeneration
     {
         private static readonly MethodInfo GenericGetMethodFromHandleMethodInfo =
             typeof(MethodBase).GetMethod("GetMethodFromHandle", new[]
-		    {                                                                                                                       		
-				typeof(RuntimeMethodHandle),
-		        typeof(RuntimeMethodHandle),
-				typeof(RuntimeTypeHandle)
-		    });
+            {                                                                                                                               
+                typeof(RuntimeMethodHandle),
+                typeof(RuntimeMethodHandle),
+                typeof(RuntimeTypeHandle)
+            });
 
         private static readonly MethodInfo GetMethodFromHandleMethodInfo =
             typeof(MethodBase).GetMethod("GetMethodFromHandle", new[]
-		    {
-		        typeof(RuntimeMethodHandle)
-		    });
+            {
+                typeof(RuntimeMethodHandle)
+            });
 
         private readonly Type _type;
         private readonly MethodInfo _method;

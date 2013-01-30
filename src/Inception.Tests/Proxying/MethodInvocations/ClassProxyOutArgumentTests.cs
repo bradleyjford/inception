@@ -4,184 +4,184 @@ using NUnit.Framework;
 
 namespace Inception.Tests.Proxying.MethodInvocations
 {
-	[TestFixture]
-	public class ClassProxyOutArgumentTests
-	{
-		private ProxyFactory _factory;
+    [TestFixture]
+    public class ClassProxyOutArgumentTests
+    {
+        private ProxyFactory _factory;
 
-		[TestFixtureSetUp]
-		public void TestFixtureSetUp()
-		{
-			_factory = new ProxyFactory(
-				"ClassProxyOutArgumentTests.Proxies",
-				"ClassProxyOutArgumentTests.dll");
-		}
+        [TestFixtureSetUp]
+        public void TestFixtureSetUp()
+        {
+            _factory = new ProxyFactory(
+                "ClassProxyOutArgumentTests.Proxies",
+                "ClassProxyOutArgumentTests.dll");
+        }
 
-		[TestFixtureTearDown]
-		public void TestFixtureTearDown()
-		{
-			_factory.SaveAssembly();
-		}
+        [TestFixtureTearDown]
+        public void TestFixtureTearDown()
+        {
+            _factory.SaveAssembly();
+        }
 
-		private OutParameterTestModel CreateProxy()
-		{
-			return _factory.CreateProxy<OutParameterTestModel>(p => { });
-		}
+        private OutParameterTestModel CreateProxy()
+        {
+            return _factory.CreateProxy<OutParameterTestModel>(p => { });
+        }
 
-		[Test]
-		public void CanInvokeMethodWithBooleanOutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithBooleanOutArg()
+        {
+            var proxy = CreateProxy();
 
-			bool arg;
+            bool arg;
 
-			proxy.BooleanOutParameter(out arg);
+            proxy.BooleanOutParameter(out arg);
 
-			Assert.AreEqual(true, arg);
-		}
+            Assert.AreEqual(true, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithByteOutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithByteOutArg()
+        {
+            var proxy = CreateProxy();
 
-			byte arg;
+            byte arg;
 
-			proxy.ByteOutParameter(out arg);
+            proxy.ByteOutParameter(out arg);
 
-			Assert.AreEqual(Byte.MaxValue, arg);
-		}
+            Assert.AreEqual(Byte.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithCharOutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithCharOutArg()
+        {
+            var proxy = CreateProxy();
 
-			char arg;
+            char arg;
 
-			proxy.CharOutParameter(out arg);
+            proxy.CharOutParameter(out arg);
 
-			Assert.AreEqual(Char.MaxValue, arg);
-		}
+            Assert.AreEqual(Char.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithInt16OutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithInt16OutArg()
+        {
+            var proxy = CreateProxy();
 
-			short arg;
+            short arg;
 
-			proxy.Int16OutParameter(out arg);
+            proxy.Int16OutParameter(out arg);
 
-			Assert.AreEqual(Int16.MaxValue, arg);
-		}
+            Assert.AreEqual(Int16.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithInt32OutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithInt32OutArg()
+        {
+            var proxy = CreateProxy();
 
-			int arg;
+            int arg;
 
-			proxy.Int32OutParameter(out arg);
+            proxy.Int32OutParameter(out arg);
 
-			Assert.AreEqual(Int32.MaxValue, arg);
-		}
+            Assert.AreEqual(Int32.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithInt64OutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithInt64OutArg()
+        {
+            var proxy = CreateProxy();
 
-			long arg;
+            long arg;
 
-			proxy.Int64OutParameter(out arg);
+            proxy.Int64OutParameter(out arg);
 
-			Assert.AreEqual(Int64.MaxValue, arg);
-		}
+            Assert.AreEqual(Int64.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithUInt16OutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithUInt16OutArg()
+        {
+            var proxy = CreateProxy();
 
-			ushort arg;
+            ushort arg;
 
-			proxy.UInt16OutParameter(out arg);
-			
-			Assert.AreEqual(UInt16.MaxValue, arg);
-		}
+            proxy.UInt16OutParameter(out arg);
+            
+            Assert.AreEqual(UInt16.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithUInt32OutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithUInt32OutArg()
+        {
+            var proxy = CreateProxy();
 
-			uint arg;
+            uint arg;
 
-			proxy.UInt32OutParameter(out arg);
+            proxy.UInt32OutParameter(out arg);
 
-			Assert.AreEqual(UInt32.MaxValue, arg);
-		}
+            Assert.AreEqual(UInt32.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithUInt64OutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithUInt64OutArg()
+        {
+            var proxy = CreateProxy();
 
-			ulong arg;
+            ulong arg;
 
-			proxy.UInt64OutParameter(out arg);
+            proxy.UInt64OutParameter(out arg);
 
-			Assert.AreEqual(UInt64.MaxValue, arg);
-		}
+            Assert.AreEqual(UInt64.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithSingleOutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithSingleOutArg()
+        {
+            var proxy = CreateProxy();
 
-			float arg;
+            float arg;
 
-			proxy.SingleOutParameter(out arg);
+            proxy.SingleOutParameter(out arg);
 
-			Assert.AreEqual(Single.MaxValue, arg);
-		}
+            Assert.AreEqual(Single.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithDoubleOutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithDoubleOutArg()
+        {
+            var proxy = CreateProxy();
 
-			double arg;
+            double arg;
 
-			proxy.DoubleOutParameter(out arg);
+            proxy.DoubleOutParameter(out arg);
 
-			Assert.AreEqual(Double.MaxValue, arg);
-		}
+            Assert.AreEqual(Double.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithDecimalOutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithDecimalOutArg()
+        {
+            var proxy = CreateProxy();
 
-			decimal arg;
+            decimal arg;
 
-			proxy.DecimalOutParameter(out arg);
+            proxy.DecimalOutParameter(out arg);
 
-			Assert.AreEqual(Decimal.MaxValue, arg);
-		}
+            Assert.AreEqual(Decimal.MaxValue, arg);
+        }
 
-		[Test]
-		public void CanInvokeMethodWithReferenceTypeOutArg()
-		{
-			var proxy = CreateProxy();
+        [Test]
+        public void CanInvokeMethodWithReferenceTypeOutArg()
+        {
+            var proxy = CreateProxy();
 
-			string arg;
+            string arg;
 
-			proxy.ClassOutParameter(out arg);
+            proxy.ClassOutParameter(out arg);
 
-			Assert.AreEqual("Result", arg);
-		}
-	}
+            Assert.AreEqual("Result", arg);
+        }
+    }
 }

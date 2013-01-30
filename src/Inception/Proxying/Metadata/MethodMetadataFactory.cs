@@ -3,14 +3,14 @@ using System.Reflection;
 
 namespace Inception.Proxying.Metadata
 {
-	internal static class MethodMetadataFactory
-	{
-		public static MethodMetadata Create(
-			IProxyDefinitionElement definitionElement, 
-			FieldMetadata targetField, 
-			MethodInfo method)
-		{
-		    var classProxyDefinition = definitionElement as ClassProxyDefinition;
+    internal static class MethodMetadataFactory
+    {
+        public static MethodMetadata Create(
+            IProxyDefinitionElement definitionElement, 
+            FieldMetadata targetField, 
+            MethodInfo method)
+        {
+            var classProxyDefinition = definitionElement as ClassProxyDefinition;
 
             if (classProxyDefinition != null)
             {
@@ -33,7 +33,7 @@ namespace Inception.Proxying.Metadata
                 return new TargetedMethodMetadata(method, targetField, targetMethod);
             }
 
-		    var targetedInterfaceProxyDefinition = definitionElement as TargetedInterfaceProxyDefinition;
+            var targetedInterfaceProxyDefinition = definitionElement as TargetedInterfaceProxyDefinition;
 
             if (targetedInterfaceProxyDefinition != null)
             {
@@ -42,16 +42,16 @@ namespace Inception.Proxying.Metadata
                 return new TargetedMethodMetadata(method, targetField, targetMethod);
             }
 
-		    var mixinInterfaveDefinition = definitionElement as MixinInterfaceDefinition;
+            var mixinInterfaveDefinition = definitionElement as MixinInterfaceDefinition;
 
             if (mixinInterfaveDefinition != null)
             {
                 var targetMethod = MemberLocator.LocateMatchingMethod(method, mixinInterfaveDefinition.MixinType);
 
-			    return new TargetedMethodMetadata(method, targetField, targetMethod);
+                return new TargetedMethodMetadata(method, targetField, targetMethod);
             }
 
-		    var nonTargetefInterfaceDefinition = definitionElement as NonTargetedInterfaceDefinition;
+            var nonTargetefInterfaceDefinition = definitionElement as NonTargetedInterfaceDefinition;
 
             if (nonTargetefInterfaceDefinition != null)
             {
@@ -59,6 +59,6 @@ namespace Inception.Proxying.Metadata
             }
 
             throw new NotSupportedException();
-		}
-	}
+        }
+    }
 }

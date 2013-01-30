@@ -6,12 +6,12 @@ namespace Inception.Proxying.Generators.ILGeneration
 {
     internal sealed class CallMethodStatement : IStatementEmitter
     {
-    	private readonly MethodInfo _method;
+        private readonly MethodInfo _method;
         private readonly IExpressionEmitter[] _arguments;
 
         public CallMethodStatement(MethodInfo method, IExpressionEmitter[] arguments)
         {
-        	_method = method;
+            _method = method;
             _arguments = arguments;
         }
 
@@ -22,7 +22,7 @@ namespace Inception.Proxying.Generators.ILGeneration
                 _arguments[i].Emit(il);
             }
 
-			if (_method.IsStatic)
+            if (_method.IsStatic)
             {
                 il.Emit(OpCodes.Call, _method);
             }
@@ -35,7 +35,7 @@ namespace Inception.Proxying.Generators.ILGeneration
                 il.Emit(OpCodes.Call, _method);
             }
 
-			il.Emit(OpCodes.Pop);
+            il.Emit(OpCodes.Pop);
         }
     }
 }

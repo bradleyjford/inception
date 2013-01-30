@@ -2,61 +2,61 @@
 
 namespace Inception.Tests.Proxying.Model
 {
-	public class Square : ISquare
-	{
-		public virtual event EventHandler WidthChanged;
-		public virtual event EventHandler ShapeChanged;
+    public class Square : ISquare
+    {
+        public virtual event EventHandler WidthChanged;
+        public virtual event EventHandler ShapeChanged;
 
-		private int _width;
+        private int _width;
 
-		public Square()
-		{
+        public Square()
+        {
 
-		}
+        }
 
-		public Square(int width)
-		{
-			_width = width;
-		}
+        public Square(int width)
+        {
+            _width = width;
+        }
 
-		public virtual string Name
-		{
-			get { return "Square"; }
-		}
+        public virtual string Name
+        {
+            get { return "Square"; }
+        }
 
-		public virtual int Width
-		{
-			get { return _width; } 
-			
-			set
-			{
-				if (_width != value)
-				{
-					_width = value;
+        public virtual int Width
+        {
+            get { return _width; } 
+            
+            set
+            {
+                if (_width != value)
+                {
+                    _width = value;
 
-					OnWidthChanged();
-				}
-			}
-		}
+                    OnWidthChanged();
+                }
+            }
+        }
 
-		protected virtual void OnWidthChanged()
-		{
-			RaiseWidthChanged();
-		}
+        protected virtual void OnWidthChanged()
+        {
+            RaiseWidthChanged();
+        }
 
-		protected void RaiseWidthChanged()
-		{
-			var handler = WidthChanged;
+        protected void RaiseWidthChanged()
+        {
+            var handler = WidthChanged;
 
-			if (handler != null)
-			{
-				handler(this, EventArgs.Empty);
-			}
-		}
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
 
-		public virtual long CalculateArea()
-		{
-			return Width * Width;
-		}
-	}
+        public virtual long CalculateArea()
+        {
+            return Width * Width;
+        }
+    }
 }

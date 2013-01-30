@@ -2,8 +2,8 @@
 
 namespace Inception.Proxying
 {
-	public interface IInterceptor
-	{
-		void Intercept(IInvocation invocation);
-	}
+    public interface IInterceptor
+    {
+        void Intercept(IInvocation invocation);
+    }
 }

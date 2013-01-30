@@ -3,28 +3,28 @@ using System.Reflection.Emit;
 
 namespace Inception.Proxying.Generators.ILGeneration
 {
-	internal sealed class ReturnStatement : IStatementEmitter
-	{
-		private readonly IExpressionEmitter _valueExpression;
+    internal sealed class ReturnStatement : IStatementEmitter
+    {
+        private readonly IExpressionEmitter _valueExpression;
 
-		public ReturnStatement()
-		{
-			
-		}
+        public ReturnStatement()
+        {
+            
+        }
 
-		public ReturnStatement(IExpressionEmitter valueExpression)
-		{
-			_valueExpression = valueExpression;
-		}
+        public ReturnStatement(IExpressionEmitter valueExpression)
+        {
+            _valueExpression = valueExpression;
+        }
 
-		public void Emit(ILGenerator il)
-		{
-			if (_valueExpression != null)
-			{
-				_valueExpression.Emit(il);
-			}
+        public void Emit(ILGenerator il)
+        {
+            if (_valueExpression != null)
+            {
+                _valueExpression.Emit(il);
+            }
 
-			il.Emit(OpCodes.Ret);
-		}
-	}
+            il.Emit(OpCodes.Ret);
+        }
+    }
 }

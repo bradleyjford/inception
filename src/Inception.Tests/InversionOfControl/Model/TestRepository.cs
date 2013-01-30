@@ -2,7 +2,7 @@
 
 namespace Inception.Tests.InversionOfControl.Model
 {
-	public class TestRepository : ITestRepository
-	{
-	}
+    public class TestRepository : ITestRepository
+    {
+    }
 }

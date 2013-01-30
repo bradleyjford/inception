@@ -2,8 +2,8 @@
 
 namespace Inception.Reflection
 {
-	public interface IPropertyGetter
-	{
-		object GetValue(object target);
-	}
+    public interface IPropertyGetter
+    {
+        object GetValue(object target);
+    }
 }

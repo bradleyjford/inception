@@ -4,34 +4,34 @@ using Inception.Proxying.Metadata;
 
 namespace Inception.Proxying.Generators
 {
-	internal static class InstanceFieldGenerator
-	{
-		public static FieldMetadataFieldBuilderMap Generate(TypeBuilder typeBuilder, TypeMetadata typeMetadata)
-		{
-			var fieldCount = typeMetadata.Fields.Length;
+    internal static class InstanceFieldGenerator
+    {
+        public static FieldMetadataFieldBuilderMap Generate(TypeBuilder typeBuilder, TypeMetadata typeMetadata)
+        {
+            var fieldCount = typeMetadata.Fields.Length;
 
-			var fieldMap = new FieldMetadataFieldBuilderMap(fieldCount);
+            var fieldMap = new FieldMetadataFieldBuilderMap(fieldCount);
 
-			for (var i = 0; i < fieldCount; i++)
-			{
-				var fieldMetadata = typeMetadata.Fields[i];
+            for (var i = 0; i < fieldCount; i++)
+            {
+                var fieldMetadata = typeMetadata.Fields[i];
 
-				var field = GenerateField(typeBuilder, fieldMetadata);
+                var field = GenerateField(typeBuilder, fieldMetadata);
 
-				fieldMap.Add(fieldMetadata, field);
-			}
+                fieldMap.Add(fieldMetadata, field);
+            }
 
-			return fieldMap;
-		}
+            return fieldMap;
+        }
 
-		private static FieldBuilder GenerateField(TypeBuilder typeBuilder, FieldMetadata fieldMetadata)
-		{
-			var field = typeBuilder.DefineField(
-				fieldMetadata.Name, 
-				fieldMetadata.FieldType, 
-				fieldMetadata.FieldAttributes);
+        private static FieldBuilder GenerateField(TypeBuilder typeBuilder, FieldMetadata fieldMetadata)
+        {
+            var field = typeBuilder.DefineField(
+                fieldMetadata.Name, 
+                fieldMetadata.FieldType, 
+                fieldMetadata.FieldAttributes);
 
-			return field;
-		}
-	}
+            return field;
+        }
+    }
 }

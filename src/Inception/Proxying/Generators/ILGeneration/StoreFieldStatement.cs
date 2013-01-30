@@ -6,7 +6,7 @@ namespace Inception.Proxying.Generators.ILGeneration
     internal sealed class StoreFieldStatement : IStatementEmitter
     {
         private readonly FieldBuilder _field;
-		private readonly IExpressionEmitter _valueEmitter;
+        private readonly IExpressionEmitter _valueEmitter;
 
         public StoreFieldStatement(FieldBuilder field, IExpressionEmitter valueEmitter)
         {

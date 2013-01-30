@@ -6,38 +6,38 @@ using Inception.Proxying.Metadata;
 
 namespace Inception.Proxying
 {
-	internal class ProxyBuilder
-	{
-		private readonly string _proxyNamespace;
-		private readonly string _assemblyFileName;
-		private readonly AssemblyBuilder _assemblyBuilder;
-		private readonly ModuleBuilder _moduleBuilder;
+    internal class ProxyBuilder
+    {
+        private readonly string _proxyNamespace;
+        private readonly string _assemblyFileName;
+        private readonly AssemblyBuilder _assemblyBuilder;
+        private readonly ModuleBuilder _moduleBuilder;
 
-		public ProxyBuilder(string proxyNamespace, string assemblyFileName)
-		{
-			_proxyNamespace = proxyNamespace;
-			_assemblyFileName = assemblyFileName;
+        public ProxyBuilder(string proxyNamespace, string assemblyFileName)
+        {
+            _proxyNamespace = proxyNamespace;
+            _assemblyFileName = assemblyFileName;
 
-			_assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(
-				new AssemblyName(proxyNamespace),
-				AssemblyBuilderAccess.RunAndSave);
+            _assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(
+                new AssemblyName(proxyNamespace),
+                AssemblyBuilderAccess.RunAndSave);
 
-			_moduleBuilder =
-				_assemblyBuilder.DefineDynamicModule(proxyNamespace, assemblyFileName);
-		}
+            _moduleBuilder =
+                _assemblyBuilder.DefineDynamicModule(proxyNamespace, assemblyFileName);
+        }
 
-		public Type Build(ProxyDefinition proxyDefinition)
-		{
-			var typeMetadata = ProxyMetadataFactory.BuildTypeMetadata(proxyDefinition);
+        public Type Build(ProxyDefinition proxyDefinition)
+        {
+            var typeMetadata = ProxyMetadataFactory.BuildTypeMetadata(proxyDefinition);
 
-			var generator = new TypeGenerator(_moduleBuilder, _proxyNamespace, typeMetadata);
+            var generator = new TypeGenerator(_moduleBuilder, _proxyNamespace, typeMetadata);
 
-			return generator.Generate();
-		}
+            return generator.Generate();
+        }
 
-		public void SaveAssembly()
-		{
-			_assemblyBuilder.Save(_assemblyFileName);
-		}
-	}
+        public void SaveAssembly()
+        {
+            _assemblyBuilder.Save(_assemblyFileName);
+        }
+    }
 }

@@ -4,72 +4,72 @@ using System.Threading;
 
 namespace Inception.InversionOfControl
 {
-	public sealed class ThreadStaticContainerLifecycle : ManagedContainerLifecycle
-	{
-		private readonly Dictionary<int, SingletonContainerLifecycle> _threadStaticLifecycles =
-			new Dictionary<int, SingletonContainerLifecycle>();
+    public sealed class ThreadStaticContainerLifecycle : ManagedContainerLifecycle
+    {
+        private readonly Dictionary<int, SingletonContainerLifecycle> _threadStaticLifecycles =
+            new Dictionary<int, SingletonContainerLifecycle>();
 
-		private readonly ReaderWriterLockSlim _lock = 
-			new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        private readonly ReaderWriterLockSlim _lock = 
+            new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
 
-		public override string Name
-		{
-			get { return "ThreadStatic"; }
-		}
+        public override string Name
+        {
+            get { return "ThreadStatic"; }
+        }
 
-		public override object GetInstance(IContainer container, IRegistration registration)
-		{
-			if (IsDisposed) throw new ObjectDisposedException("ThreadStaticContainerLifecycle");
+        public override object GetInstance(IContainer container, IRegistration registration)
+        {
+            if (IsDisposed) throw new ObjectDisposedException("ThreadStaticContainerLifecycle");
 
-			var lifecycle = GetThreadStaticLifecycle();
+            var lifecycle = GetThreadStaticLifecycle();
 
-			return lifecycle.GetInstance(container, registration);
-		}
+            return lifecycle.GetInstance(container, registration);
+        }
 
-		private SingletonContainerLifecycle GetThreadStaticLifecycle()
-		{
-			_lock.ExitUpgradeableReadLock();
+        private SingletonContainerLifecycle GetThreadStaticLifecycle()
+        {
+            _lock.ExitUpgradeableReadLock();
 
-			try
-			{
-				var threadId = Thread.CurrentThread.ManagedThreadId;
+            try
+            {
+                var threadId = Thread.CurrentThread.ManagedThreadId;
 
-				if (_threadStaticLifecycles.ContainsKey(threadId))
-				{
-					return _threadStaticLifecycles[threadId];
-				}
+                if (_threadStaticLifecycles.ContainsKey(threadId))
+                {
+                    return _threadStaticLifecycles[threadId];
+                }
 
-				_lock.EnterWriteLock();
+                _lock.EnterWriteLock();
 
-				try
-				{
-					var lifecycle = new SingletonContainerLifecycle();
+                try
+                {
+                    var lifecycle = new SingletonContainerLifecycle();
 
-					_threadStaticLifecycles.Add(threadId, lifecycle);
+                    _threadStaticLifecycles.Add(threadId, lifecycle);
 
-					return lifecycle;
-				}
-				finally
-				{
-					_lock.ExitWriteLock();
-				}
-			}
-			finally
-			{
-				_lock.ExitUpgradeableReadLock();
-			}
-		}
+                    return lifecycle;
+                }
+                finally
+                {
+                    _lock.ExitWriteLock();
+                }
+            }
+            finally
+            {
+                _lock.ExitUpgradeableReadLock();
+            }
+        }
 
-		protected override void Dispose(bool disposing)
-		{
-			foreach (var lifecycle in _threadStaticLifecycles.Values)
-			{
-				lifecycle.Dispose();
-			}
+        protected override void Dispose(bool disposing)
+        {
+            foreach (var lifecycle in _threadStaticLifecycles.Values)
+            {
+                lifecycle.Dispose();
+            }
 
-			_threadStaticLifecycles.Clear();
+            _threadStaticLifecycles.Clear();
 
-			_lock.Dispose();
-		}
-	}
+            _lock.Dispose();
+        }
+    }
 }

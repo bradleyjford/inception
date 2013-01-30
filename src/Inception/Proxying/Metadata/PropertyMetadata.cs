@@ -4,91 +4,91 @@ using System.Reflection;
 
 namespace Inception.Proxying.Metadata
 {
-	[DebuggerDisplay("{Name} ({PropertyInfo.PropertyType})")]
-	internal class PropertyMetadata : MemberMetadata
-	{
-		private readonly PropertyInfo _propertyInfo;
-		private readonly MethodMetadata _getMethod;
-		private readonly MethodMetadata _setMethod;
+    [DebuggerDisplay("{Name} ({PropertyInfo.PropertyType})")]
+    internal class PropertyMetadata : MemberMetadata
+    {
+        private readonly PropertyInfo _propertyInfo;
+        private readonly MethodMetadata _getMethod;
+        private readonly MethodMetadata _setMethod;
 
-		private readonly Type[] _indexerTypes;
+        private readonly Type[] _indexerTypes;
 
-		private readonly PropertyAttributes _propertyAttributes;
+        private readonly PropertyAttributes _propertyAttributes;
 
-		public PropertyMetadata(
-			PropertyInfo propertyInfo, 
-			MethodMetadata getMethod, 
-			MethodMetadata setMethod) 
-			: base(propertyInfo)
-		{
-			_propertyInfo = propertyInfo;
+        public PropertyMetadata(
+            PropertyInfo propertyInfo, 
+            MethodMetadata getMethod, 
+            MethodMetadata setMethod) 
+            : base(propertyInfo)
+        {
+            _propertyInfo = propertyInfo;
 
-			_getMethod = getMethod;
-			_setMethod = setMethod;
+            _getMethod = getMethod;
+            _setMethod = setMethod;
 
-			_indexerTypes = GetIndexerTypes(_propertyInfo);
+            _indexerTypes = GetIndexerTypes(_propertyInfo);
 
-			_propertyAttributes = propertyInfo.Attributes;
-		}
+            _propertyAttributes = propertyInfo.Attributes;
+        }
 
-		private static Type[] GetIndexerTypes(PropertyInfo property)
-		{
-			var indexerParameters = property.GetIndexParameters();
+        private static Type[] GetIndexerTypes(PropertyInfo property)
+        {
+            var indexerParameters = property.GetIndexParameters();
 
-			var result = new Type[indexerParameters.Length];
+            var result = new Type[indexerParameters.Length];
 
-			for (var i = 0; i < indexerParameters.Length; i++)
-			{
-				result[i] = indexerParameters[i].ParameterType;
-			}
+            for (var i = 0; i < indexerParameters.Length; i++)
+            {
+                result[i] = indexerParameters[i].ParameterType;
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		public override void UseExplicitInterfaceImplementation()
-		{
-			base.UseExplicitInterfaceImplementation();
+        public override void UseExplicitInterfaceImplementation()
+        {
+            base.UseExplicitInterfaceImplementation();
 
-			UseExplicitImplementationForHandlerMethod(_getMethod);
-			UseExplicitImplementationForHandlerMethod(_setMethod);
-		}
+            UseExplicitImplementationForHandlerMethod(_getMethod);
+            UseExplicitImplementationForHandlerMethod(_setMethod);
+        }
 
-		private void UseExplicitImplementationForHandlerMethod(MethodMetadata handlerMethod)
-		{
-			if (handlerMethod != null)
-			{
-				handlerMethod.UseExplicitInterfaceImplementation();
-			}
-		}
+        private void UseExplicitImplementationForHandlerMethod(MethodMetadata handlerMethod)
+        {
+            if (handlerMethod != null)
+            {
+                handlerMethod.UseExplicitInterfaceImplementation();
+            }
+        }
 
-		public PropertyAttributes PropertyAttributes
-		{
-			get { return _propertyAttributes; }
-		}
+        public PropertyAttributes PropertyAttributes
+        {
+            get { return _propertyAttributes; }
+        }
 
-		public Type PropertyType
-		{
-			get { return _propertyInfo.PropertyType; }
-		}
+        public Type PropertyType
+        {
+            get { return _propertyInfo.PropertyType; }
+        }
 
-		public Type[] IndexerTypes
-		{
-			get { return _indexerTypes; }
-		}
+        public Type[] IndexerTypes
+        {
+            get { return _indexerTypes; }
+        }
 
-		public PropertyInfo PropertyInfo
-		{
-			get { return _propertyInfo; }
-		}
+        public PropertyInfo PropertyInfo
+        {
+            get { return _propertyInfo; }
+        }
 
-		public MethodMetadata GetGetMethod()
-		{
-			return _getMethod;
-		}
+        public MethodMetadata GetGetMethod()
+        {
+            return _getMethod;
+        }
 
-		public MethodMetadata GetSetMethod()
-		{
-			return _setMethod;
-		}
-	}
+        public MethodMetadata GetSetMethod()
+        {
+            return _setMethod;
+        }
+    }
 }

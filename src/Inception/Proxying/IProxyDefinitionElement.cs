@@ -2,8 +2,8 @@
 
 namespace Inception.Proxying
 {
-	internal interface IProxyDefinitionElement
-	{
-		Type Type { get; }
-	}
+    internal interface IProxyDefinitionElement
+    {
+        Type Type { get; }
+    }
 }

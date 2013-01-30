@@ -4,54 +4,54 @@ using Inception.Reflection;
 
 namespace Inception.InversionOfControl
 {
-	public class ContainerConstructorSelector : ConstructorSelector
-	{
-		public override ConstructorInfo Select(Type type, ArgumentCollection arguments)
-		{
-			ConstructorInfo result = null;
-			var parameterCount = -1;
+    public class ContainerConstructorSelector : ConstructorSelector
+    {
+        public override ConstructorInfo Select(Type type, ArgumentCollection arguments)
+        {
+            ConstructorInfo result = null;
+            var parameterCount = -1;
 
-			var constructors = type.GetConstructors(BindingFlags.Public | BindingFlags.Instance);
+            var constructors = type.GetConstructors(BindingFlags.Public | BindingFlags.Instance);
 
-			foreach (var constructor in constructors)
-			{
-				var parameters = constructor.GetParameters();
+            foreach (var constructor in constructors)
+            {
+                var parameters = constructor.GetParameters();
 
-				var hasUnresolvedPrimitiveParameter = false;
-				var matchedParameters = 0;
+                var hasUnresolvedPrimitiveParameter = false;
+                var matchedParameters = 0;
 
-				foreach (var parameter in parameters)
-				{
-					if (IsPrimitiveType(parameter.ParameterType))
-					{
-						if (ArgumentSuppliedForParameter(parameter, arguments))
-						{
-							matchedParameters++;
-						}
-						else
-						{
-							hasUnresolvedPrimitiveParameter = true;
-							break;
-						}
-					}
-				}
+                foreach (var parameter in parameters)
+                {
+                    if (IsPrimitiveType(parameter.ParameterType))
+                    {
+                        if (ArgumentSuppliedForParameter(parameter, arguments))
+                        {
+                            matchedParameters++;
+                        }
+                        else
+                        {
+                            hasUnresolvedPrimitiveParameter = true;
+                            break;
+                        }
+                    }
+                }
 
-				if (!hasUnresolvedPrimitiveParameter &&
-					parameters.Length > parameterCount &&
-					arguments.Count == matchedParameters)
-				{
-					parameterCount = parameters.Length;
+                if (!hasUnresolvedPrimitiveParameter &&
+                    parameters.Length > parameterCount &&
+                    arguments.Count == matchedParameters)
+                {
+                    parameterCount = parameters.Length;
 
-					result = constructor;
-				}
-			}
+                    result = constructor;
+                }
+            }
 
-			return result;
-		}
+            return result;
+        }
 
-		private bool IsPrimitiveType(Type type)
-		{
-			return type.IsPrimitive || type == typeof(string);
-		}
-	}
+        private bool IsPrimitiveType(Type type)
+        {
+            return type.IsPrimitive || type == typeof(string);
+        }
+    }
 }

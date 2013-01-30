@@ -2,15 +2,15 @@
 
 namespace Inception.Tests.Proxying
 {
-	partial class InterfaceProxyMetadataTests
-	{
-		private interface IShape
-		{
-			event EventHandler ShapeChanged;
+    partial class InterfaceProxyMetadataTests
+    {
+        private interface IShape
+        {
+            event EventHandler ShapeChanged;
 
-			string Name { get; }
+            string Name { get; }
 
-			long CalculateArea();
-		}
-	}
+            long CalculateArea();
+        }
+    }
 }

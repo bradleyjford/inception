@@ -2,63 +2,63 @@
 
 namespace Inception.Tests.Proxying
 {
-	partial class ProxyBuilderTests
-	{
-		public interface IShape
-		{
-			event EventHandler ShapeChanged;
-			string Name { get; }
-			long CalculateArea();
-		}
+    partial class ProxyBuilderTests
+    {
+        public interface IShape
+        {
+            event EventHandler ShapeChanged;
+            string Name { get; }
+            long CalculateArea();
+        }
 
-		public interface ISquare
-		{
-			event EventHandler WidthChanged;
-			int Width { get; set; }
-			long CalculateArea();
-		}
+        public interface ISquare
+        {
+            event EventHandler WidthChanged;
+            int Width { get; set; }
+            long CalculateArea();
+        }
 
-		public class Square : ISquare
-		{
-			public virtual event EventHandler WidthChanged;
-			public virtual event EventHandler ShapeChanged;
+        public class Square : ISquare
+        {
+            public virtual event EventHandler WidthChanged;
+            public virtual event EventHandler ShapeChanged;
 
-			private int _width;
+            private int _width;
 
-			public Square()
-			{
+            public Square()
+            {
 
-			}
+            }
 
-			public Square(int width)
-			{
-			}
+            public Square(int width)
+            {
+            }
 
-			public virtual string Name
-			{
-				get { return "Square"; }
-			}
+            public virtual string Name
+            {
+                get { return "Square"; }
+            }
 
-			public virtual int Width { get; set; }
+            public virtual int Width { get; set; }
 
-			protected virtual void OnWidthChanged()
-			{
-			}
+            protected virtual void OnWidthChanged()
+            {
+            }
 
-			protected void RaiseWidthChanged()
-			{
-				var handler = WidthChanged;
+            protected void RaiseWidthChanged()
+            {
+                var handler = WidthChanged;
 
-				if (handler != null)
-				{
-					handler(this, EventArgs.Empty);
-				}
-			}
+                if (handler != null)
+                {
+                    handler(this, EventArgs.Empty);
+                }
+            }
 
-			public virtual long CalculateArea()
-			{
-				return _width * _width;
-			}
-		}
-	}
+            public virtual long CalculateArea()
+            {
+                return _width * _width;
+            }
+        }
+    }
 }

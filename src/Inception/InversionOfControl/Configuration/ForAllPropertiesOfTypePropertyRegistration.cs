@@ -2,7 +2,7 @@
 
 namespace Inception.InversionOfControl.Configuration
 {
-	class ForAllPropertiesOfTypePropertyRegistration
-	{
-	}
+    class ForAllPropertiesOfTypePropertyRegistration
+    {
+    }
 }
