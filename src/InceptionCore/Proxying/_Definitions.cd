@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Inception.Proxying.ClassProxyDefinition" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Proxying\ClassProxyDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inception.Proxying.MixinInterfaceDefinition" Collapsed="true">
+    <Position X="4.5" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAgAAAAAAIAAAAAIAAAAAAAABABAA=</HashCode>
+      <FileName>Proxying\MixinInterfaceDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Inception.Proxying.NonTargetedInterfaceDefinition" Collapsed="true">
+    <Position X="1.75" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Proxying\NonTargetedInterfaceDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Inception.Proxying.ProxyDefinition" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAgAAAAAIIAAAQAAAEgAEAA=</HashCode>
+      <FileName>Proxying\ProxyDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.221" />
+  </Class>
+  <Class Name="Inception.Proxying.TargetedClassProxyDefinition" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Proxying\TargetedClassProxyDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inception.Proxying.TargetedInterfaceProxyDefinition" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Proxying\TargetedInterfaceProxyDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inception.Proxying.TargetedProxyDefinition" Collapsed="true">
+    <Position X="2" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAgAAAAAAAAAAAAIAAAAAAgAAAAAA=</HashCode>
+      <FileName>Proxying\TargetedProxyDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Inception.Proxying.InterfaceDefinition" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAgAAAAAAAAAAAAIAAAQAAAAAAAAA=</HashCode>
+      <FileName>Proxying\InterfaceDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Inception.Proxying.DuckTypeInterfaceDefinition" Collapsed="true">
+    <Position X="7.25" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Proxying\DuckTypeInterfaceDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Inception.Proxying.InterfaceProxyDefinition" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Proxying\InterfaceProxyDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Inception.Proxying.IProxyDefinitionElement" Collapsed="true">
+    <Position X="10" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Proxying\IProxyDefinitionElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

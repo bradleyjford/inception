@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 
-namespace Inception
+namespace InceptionCore
 {
     /// <remarks>
-    /// Adapted from Josh Bloch's book "Effective Java" - http://www.amazon.com/dp/0321356683/.
+    ///     Adapted from Josh Bloch's book "Effective Java" - http://www.amazon.com/dp/0321356683/.
     /// </remarks>
     public static class HashCodeUtility
     {
